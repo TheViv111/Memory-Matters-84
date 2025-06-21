@@ -1,1 +1,8 @@
+
 project_id = "ttyvacifkgvnwlqjxqil"
+
+[functions.submit-appointment]
+verify_jwt = false
+
+[functions.submit-contact]
+verify_jwt = false
