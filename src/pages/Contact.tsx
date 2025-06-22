@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -20,6 +21,7 @@ import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import FadeInButton from '@/components/animations/FadeInButton';
+import GoogleMap from '@/components/GoogleMap';
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -112,10 +114,10 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
-              { icon: Phone, title: "Phone", content: "(555) 123-4567", subtitle: "Main Office" },
+              { icon: Phone, title: "Phone", content: "+91 9867739963", subtitle: "Main Office" },
               { icon: Mail, title: "Email", content: "info@memorymattersmd.com", subtitle: "General Inquiries" },
               { icon: MapPin, title: "Location", content: "4, Wind Tunnel Rd", subtitle: "Murugeshpalya, Bengaluru" },
-              { icon: Shield, title: "Emergency", content: "(555) 123-4567", subtitle: "24/7 for Patients" }
+              { icon: Shield, title: "Emergency", content: "+91 9867739963", subtitle: "24/7 for Patients" }
             ].map((item, index) => (
               <ScrollReveal key={index} direction="up" delay={0.1 + index * 0.1}>
                 <Card className="text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
@@ -375,25 +377,7 @@ const Contact = () => {
           </ScrollReveal>
           
           <ScrollReveal direction="up" delay={0.2}>
-            <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <div className="h-96 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-16 h-16 text-medical-teal mx-auto mb-4 animate-pulse" />
-                  <p className="font-inter text-gray-600">Interactive Google Maps</p>
-                  <p className="font-inter text-sm text-gray-500">
-                    4, Wind Tunnel Rd, Murugeshpalya, Kaveri Nagar, Bengaluru, Karnataka 560017
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </ScrollReveal>
-          
-          <ScrollReveal direction="up" delay={0.3}>
-            <div className="text-center mt-6">
-              <FadeInButton className="bg-medical-teal hover:bg-medical-teal/90 text-white font-inter shadow-lg">
-                Get Directions
-              </FadeInButton>
-            </div>
+            <GoogleMap />
           </ScrollReveal>
         </div>
       </section>

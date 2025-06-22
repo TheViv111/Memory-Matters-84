@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { GraduationCap, Award, BookOpen, Users, Heart, Shield } from 'lucide-react';
+import ScrollReveal from '@/components/animations/ScrollReveal';
 
 const About = () => {
   return (
@@ -16,29 +17,37 @@ const About = () => {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="font-playfair text-4xl md:text-5xl text-medical-charcoal mb-6">
-                Meet Dr. Soumya Hegde
-              </h1>
-              <p className="font-inter text-xl text-gray-700 mb-8 leading-relaxed">
-                Board-Certified Neurologist specializing in memory disorders, dementia care, 
-                and geriatric neurology with over 15 years of compassionate patient care.
-              </p>
-              <Link to="/appointment">
-                <Button className="bg-medical-deep-blue hover:bg-medical-deep-blue/90 text-white px-8 py-3 font-inter">
-                  Schedule Consultation
-                </Button>
-              </Link>
-            </div>
-            <div className="relative">
-              <div className="bg-medical-lavender/20 rounded-2xl p-6">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Dr. Soumya Hegde - Professional headshot"
-                  className="w-full h-96 object-cover rounded-lg shadow-lg"
-                />
+            <ScrollReveal direction="left" delay={0.1}>
+              <div>
+                <h1 className="font-playfair text-4xl md:text-5xl text-medical-charcoal mb-6">
+                  Meet Dr. Soumya Hegde
+                </h1>
+                <p className="font-inter text-xl text-gray-700 mb-8 leading-relaxed">
+                  Board-Certified Neurologist specializing in memory disorders, dementia care, 
+                  and geriatric neurology with over 15 years of compassionate patient care.
+                </p>
+                <Link to="/appointment">
+                  <Button className="bg-medical-deep-blue hover:bg-medical-deep-blue/90 text-white px-8 py-3 font-inter shadow-lg transform transition-all duration-200 hover:scale-105">
+                    Schedule Consultation
+                  </Button>
+                </Link>
               </div>
-            </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.2}>
+              <div className="relative">
+                <div className="bg-gradient-to-br from-medical-lavender/20 to-medical-teal/10 rounded-2xl p-6 transform transition-all duration-300 hover:scale-105">
+                  <img 
+                    src="/doctor-image.jpg" 
+                    alt="Dr. Soumya Hegde - Board-Certified Neurologist specializing in memory disorders"
+                    className="w-full h-96 object-cover rounded-lg shadow-xl transition-transform duration-300 hover:shadow-2xl"
+                    onError={(e) => {
+                      e.currentTarget.src = "/placeholder.svg";
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-medical-deep-blue/10 to-transparent rounded-lg pointer-events-none"></div>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -46,9 +55,11 @@ const About = () => {
       {/* Credentials Section */}
       <section className="py-16 bg-medical-beige">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal text-center mb-12">
-            Credentials & Qualifications
-          </h2>
+          <ScrollReveal direction="up" delay={0.1}>
+            <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal text-center mb-12">
+              Credentials & Qualifications
+            </h2>
+          </ScrollReveal>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -80,23 +91,25 @@ const About = () => {
                 ]
               }
             ].map((credential, index) => (
-              <Card key={index} className="h-full">
-                <CardContent className="p-6">
-                  <div className="mb-4">
-                    {credential.icon}
-                  </div>
-                  <h3 className="font-playfair text-xl text-medical-charcoal mb-4">
-                    {credential.title}
-                  </h3>
-                  <ul className="space-y-2">
-                    {credential.details.map((detail, detailIndex) => (
-                      <li key={detailIndex} className="font-inter text-gray-700 text-sm">
-                        • {detail}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <ScrollReveal key={index} direction="up" delay={0.2 + index * 0.1}>
+                <Card className="h-full hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+                  <CardContent className="p-6">
+                    <div className="mb-4 transform transition-transform duration-200 group-hover:scale-110">
+                      {credential.icon}
+                    </div>
+                    <h3 className="font-playfair text-xl text-medical-charcoal mb-4">
+                      {credential.title}
+                    </h3>
+                    <ul className="space-y-2">
+                      {credential.details.map((detail, detailIndex) => (
+                        <li key={detailIndex} className="font-inter text-gray-700 text-sm">
+                          • {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -105,33 +118,39 @@ const About = () => {
       {/* Philosophy Section */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal mb-6">
-              Philosophy of Care
-            </h2>
-            <div className="w-24 h-1 bg-medical-teal mx-auto mb-8"></div>
-          </div>
-          
-          <div className="bg-medical-beige rounded-lg p-8 md:p-12">
-            <blockquote className="font-inter text-lg md:text-xl text-gray-700 leading-relaxed text-center italic mb-8">
-              "Every patient deserves to be heard, understood, and treated with dignity. My approach 
-              centers on building trust, providing clear communication, and developing personalized 
-              care plans that honor each individual's unique needs and circumstances."
-            </blockquote>
-            <div className="text-center">
-              <p className="font-playfair text-xl text-medical-charcoal">Dr. Soumya Hegde</p>
-              <p className="font-inter text-gray-600">Founder, Memory Matters Clinic</p>
+          <ScrollReveal direction="up" delay={0.1}>
+            <div className="text-center mb-12">
+              <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal mb-6">
+                Philosophy of Care
+              </h2>
+              <div className="w-24 h-1 bg-medical-teal mx-auto mb-8"></div>
             </div>
-          </div>
+          </ScrollReveal>
+          
+          <ScrollReveal direction="up" delay={0.2}>
+            <div className="bg-gradient-to-br from-medical-beige to-medical-lavender/20 rounded-lg p-8 md:p-12 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <blockquote className="font-inter text-lg md:text-xl text-gray-700 leading-relaxed text-center italic mb-8">
+                "Every patient deserves to be heard, understood, and treated with dignity. My approach 
+                centers on building trust, providing clear communication, and developing personalized 
+                care plans that honor each individual's unique needs and circumstances."
+              </blockquote>
+              <div className="text-center">
+                <p className="font-playfair text-xl text-medical-charcoal">Dr. Soumya Hegde</p>
+                <p className="font-inter text-gray-600">Founder, Memory Matters Clinic</p>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Specializations */}
       <section className="py-16 bg-medical-beige">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal text-center mb-12">
-            Areas of Specialization
-          </h2>
+          <ScrollReveal direction="up" delay={0.1}>
+            <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal text-center mb-12">
+              Areas of Specialization
+            </h2>
+          </ScrollReveal>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
@@ -156,23 +175,25 @@ const About = () => {
                 description: "Guidance and support for families navigating the challenges of neurological and memory disorders."
               }
             ].map((specialization, index) => (
-              <Card key={index} className="border-l-4 border-medical-teal">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      {specialization.icon}
+              <ScrollReveal key={index} direction="up" delay={0.2 + index * 0.1}>
+                <Card className="border-l-4 border-medical-teal hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 transform transition-transform duration-200 group-hover:scale-110">
+                        {specialization.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-playfair text-xl text-medical-charcoal mb-3">
+                          {specialization.title}
+                        </h3>
+                        <p className="font-inter text-gray-700 leading-relaxed">
+                          {specialization.description}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-playfair text-xl text-medical-charcoal mb-3">
-                        {specialization.title}
-                      </h3>
-                      <p className="font-inter text-gray-700 leading-relaxed">
-                        {specialization.description}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -181,9 +202,11 @@ const About = () => {
       {/* Awards & Recognition */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal text-center mb-12">
-            Awards & Recognition
-          </h2>
+          <ScrollReveal direction="up" delay={0.1}>
+            <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal text-center mb-12">
+              Awards & Recognition
+            </h2>
+          </ScrollReveal>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -208,20 +231,24 @@ const About = () => {
                 organization: "Memory Care Network"
               }
             ].map((award, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="p-6">
-                  <Award className="w-12 h-12 text-medical-teal mx-auto mb-4" />
-                  <p className="font-playfair text-2xl text-medical-deep-blue font-semibold mb-2">
-                    {award.year}
-                  </p>
-                  <h3 className="font-inter font-semibold text-medical-charcoal mb-2">
-                    {award.award}
-                  </h3>
-                  <p className="font-inter text-sm text-gray-600">
-                    {award.organization}
-                  </p>
-                </CardContent>
-              </Card>
+              <ScrollReveal key={index} direction="up" delay={0.2 + index * 0.1}>
+                <Card className="text-center hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+                  <CardContent className="p-6">
+                    <div className="transform transition-transform duration-200 group-hover:scale-110">
+                      <Award className="w-12 h-12 text-medical-teal mx-auto mb-4" />
+                    </div>
+                    <p className="font-playfair text-2xl text-medical-deep-blue font-semibold mb-2">
+                      {award.year}
+                    </p>
+                    <h3 className="font-inter font-semibold text-medical-charcoal mb-2">
+                      {award.award}
+                    </h3>
+                    <p className="font-inter text-sm text-gray-600">
+                      {award.organization}
+                    </p>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -230,9 +257,11 @@ const About = () => {
       {/* Publications */}
       <section className="py-16 bg-medical-beige">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal text-center mb-12">
-            Recent Publications
-          </h2>
+          <ScrollReveal direction="up" delay={0.1}>
+            <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal text-center mb-12">
+              Recent Publications
+            </h2>
+          </ScrollReveal>
           
           <div className="space-y-6">
             {[
@@ -255,24 +284,28 @@ const About = () => {
                 type: "Case Studies"
               }
             ].map((publication, index) => (
-              <Card key={index}>
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <BookOpen className="w-6 h-6 text-medical-teal flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-inter font-semibold text-medical-charcoal mb-2">
-                        {publication.title}
-                      </h3>
-                      <p className="font-inter text-gray-600 mb-1">
-                        <span className="font-medium">{publication.journal}</span> • {publication.year}
-                      </p>
-                      <span className="inline-block px-3 py-1 bg-medical-teal/10 text-medical-teal text-sm rounded-full">
-                        {publication.type}
-                      </span>
+              <ScrollReveal key={index} direction="up" delay={0.2 + index * 0.1}>
+                <Card className="hover:shadow-xl transition-all duration-300 hover:scale-102 group">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="transform transition-transform duration-200 group-hover:scale-110">
+                        <BookOpen className="w-6 h-6 text-medical-teal flex-shrink-0 mt-1" />
+                      </div>
+                      <div>
+                        <h3 className="font-inter font-semibold text-medical-charcoal mb-2">
+                          {publication.title}
+                        </h3>
+                        <p className="font-inter text-gray-600 mb-1">
+                          <span className="font-medium">{publication.journal}</span> • {publication.year}
+                        </p>
+                        <span className="inline-block px-3 py-1 bg-medical-teal/10 text-medical-teal text-sm rounded-full">
+                          {publication.type}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -281,18 +314,24 @@ const About = () => {
       {/* Call to Action */}
       <section className="py-16 bg-medical-deep-blue text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-playfair text-3xl md:text-4xl mb-6">
-            Experience Compassionate, Expert Care
-          </h2>
-          <p className="font-inter text-xl mb-8 opacity-90">
-            Schedule your consultation with Dr. Hegde and discover how personalized 
-            neurological care can make a difference in your journey.
-          </p>
-          <Link to="/appointment">
-            <Button className="bg-medical-teal hover:bg-medical-teal/90 text-white px-8 py-3 text-lg font-inter">
-              Schedule Your Consultation
-            </Button>
-          </Link>
+          <ScrollReveal direction="up" delay={0.1}>
+            <h2 className="font-playfair text-3xl md:text-4xl mb-6">
+              Experience Compassionate, Expert Care
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.2}>
+            <p className="font-inter text-xl mb-8 opacity-90">
+              Schedule your consultation with Dr. Hegde and discover how personalized 
+              neurological care can make a difference in your journey.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.3}>
+            <Link to="/appointment">
+              <Button className="bg-medical-teal hover:bg-medical-teal/90 text-white px-8 py-3 text-lg font-inter shadow-lg transform transition-all duration-200 hover:scale-105">
+                Schedule Your Consultation
+              </Button>
+            </Link>
+          </ScrollReveal>
         </div>
       </section>
 

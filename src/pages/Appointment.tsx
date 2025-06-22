@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -138,7 +137,7 @@ const Appointment = () => {
             </h2>
           </ScrollReveal>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {[
               {
                 icon: <MapPin className="w-8 h-8 text-medical-teal" />,
@@ -155,14 +154,6 @@ const Appointment = () => {
                 description: "Convenient online consultation from your home",
                 duration: "45-60 minutes",
                 features: ["Secure video call", "Document sharing", "Follow-up included"]
-              },
-              {
-                icon: <Phone className="w-8 h-8 text-medical-teal" />,
-                type: "phone",
-                title: "Phone Consultation",
-                description: "Initial discussion and care planning by phone",
-                duration: "30-45 minutes",
-                features: ["Treatment review", "Medication discussion", "Care coordination"]
               }
             ].map((option, index) => (
               <ScrollReveal key={index} direction="up" delay={0.2 + index * 0.1}>
@@ -239,7 +230,7 @@ const Appointment = () => {
                               selected={selectedDate}
                               onSelect={setSelectedDate}
                               disabled={(date) => date < new Date() || date.getDay() === 0}
-                              className="rounded-md border shadow-lg"
+                              className="rounded-md border shadow-lg pointer-events-auto"
                               initialFocus
                             />
                           </PopoverContent>
@@ -478,7 +469,7 @@ const Appointment = () => {
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: Phone, title: "Call Us", content: "(555) 123-4567", subtitle: "Mon-Fri: 8AM-5PM" },
+              { icon: Phone, title: "Call Us", content: "+91 9867739963", subtitle: "Mon-Fri: 8AM-5PM" },
               { icon: Video, title: "Video Consult", content: "Available for follow-ups", subtitle: "Same day available" },
               { icon: Clock, title: "Emergency", content: "24/7 Line", subtitle: "For existing patients" }
             ].map((item, index) => (
