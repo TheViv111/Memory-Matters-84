@@ -1,10 +1,7 @@
-
 import React from 'react';
 import ScrollReveal from '@/components/animations/ScrollReveal';
-
 const HeroSection = () => {
-  return (
-    <section className="py-20 bg-gradient-to-br from-medical-beige via-white to-medical-teal/5 relative overflow-hidden">
+  return <section className="py-20 bg-gradient-to-br from-medical-beige via-white to-medical-teal/5 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-medical-teal/5 to-medical-deep-blue/5" />
       <div className="absolute top-0 right-0 w-72 h-72 bg-medical-teal/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-medical-deep-blue/10 rounded-full blur-3xl" />
@@ -44,11 +41,9 @@ const HeroSection = () => {
               </div>
               
               <div className="flex flex-wrap gap-3">
-                {["MD Neurology - NIMHANS", "Movement Disorders Specialist", "Dementia Care Expert", "Cognitive Health Advocate"].map((credential, index) => (
-                  <div key={index} className="bg-gradient-to-r from-medical-teal/10 to-medical-deep-blue/10 px-4 py-2 rounded-full border border-medical-teal/20 hover:from-medical-teal/20 hover:to-medical-deep-blue/20 transition-all duration-300">
+                {["MD Neurology - NIMHANS", "Movement Disorders Specialist", "Dementia Care Expert", "Cognitive Health Advocate"].map((credential, index) => <div key={index} className="bg-gradient-to-r from-medical-teal/10 to-medical-deep-blue/10 px-4 py-2 rounded-full border border-medical-teal/20 hover:from-medical-teal/20 hover:to-medical-deep-blue/20 transition-all duration-300">
                     <span className="font-inter text-medical-deep-blue font-medium text-sm">{credential}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </ScrollReveal>
@@ -58,15 +53,10 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-medical-teal/20 to-medical-deep-blue/20 rounded-3xl transform rotate-3 hover:rotate-6 transition-transform duration-500"></div>
               <div className="absolute inset-0 bg-gradient-to-tr from-medical-deep-blue/10 to-medical-teal/10 rounded-3xl transform -rotate-3 hover:-rotate-6 transition-transform duration-500"></div>
               <div className="relative bg-white p-3 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
-                <img 
-                  alt="Dr. Soumya Hegde - Neurologist specializing in memory care and cognitive disorders" 
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80";
-                  }} 
-                  src="/doctor-image.jpg" 
-                  className="w-full h-96 rounded-2xl object-cover" 
-                />
+                <img alt="Dr. Soumya Hegde - Neurologist specializing in memory care and cognitive disorders" onError={e => {
+                const target = e.target as HTMLImageElement;
+                target.src = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80";
+              }} className="w-full h-96 rounded-2xl object-cover" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhISEhIVFRUVFRAVFRUVFRUVFRUVFRUWFxcVFRUYHSggGBolHRUVIjEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGi0dHR0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0rKy0rLS0tLS0tLS0tLS0tLS0tNy0rLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAACAAEDBAYFBwj/xAA9EAABAwIDBQUGBQIGAwEAAAABAAIRAyEEEjEFQVFhcQYigZGxEzKhwdHwB0JScvGS4RQjM2KCsjRTYyT/xAAZAQADAQEBAAAAAAAAAAAAAAAAAQMCBAX/xAAnEQEAAgICAgEEAQUAAAAAAAAAAQIDESExBBJBEyIyUTMFFEJScf/aAAwDAQACEQMRAD8A8iATwjhPlVmQgJEKSE4CAhhEApMiQakAhqINRhqINQEeVOGqXKiDUwjDUsqmDUWVBIQxLKpsqRCDQwnDUcJBADlSLUcJoQQITZVLCaEBFCYhTQmLUBDlSyqXKllQaLKhLVOWpsqAhyIKrbHoVZIUdQWPQoD1dMjhJZDyFEAnARALQMAnARQnAQAwnDUUIkAIaiDUQThBFlT5UQCMJgEJ4REqricQAYBSmYg4hLUqAKA4oKtVJKiyrHs16rzMSzifJSh7P1jyProuYR/CJj0ew06YFpSAVJtYjefvkpqdbnfwKfvBeqzkQwjp1pRPatbLSFMiKYBBGhOAnhOAgBITQjITEIAIUdQWKmIQVBY9CmHqcpIoTrJvJAEQQogmDp0ydAOE6QSQRwnTBEEASfNAumcQBJ8AuXisUXafRZm36biuu02IxJdpoqzQd6am4i5ROqBYkCzI2lQRzUu62o9J08EGkyfBQVGQVPTpu+/vonc3MXRuMDw1SOUE2KJjoRnDmQPFC9u4IAxX6gq3QrTY+C5jp" />
                 <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 </div>
@@ -75,8 +65,6 @@ const HeroSection = () => {
           </ScrollReveal>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
