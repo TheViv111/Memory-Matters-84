@@ -21,18 +21,24 @@ const Footer = () => {
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Compassionate care for memory and neurological conditions. Dr. Soumya Hegde and our team 
-              provide comprehensive, patient-centered services to support you and your family.
+              provide comprehensive, patient-centered services to support you and your family on your health journey.
             </p>
             
             <div className="space-y-3">
-              <div className="flex items-center space-x-3 hover:text-medical-teal transition-colors duration-200">
+              <a 
+                href="tel:8904418172"
+                className="flex items-center space-x-3 hover:text-medical-teal transition-colors duration-200"
+              >
                 <Phone size={18} className="text-medical-teal" />
                 <span>89044 18172</span>
-              </div>
-              <div className="flex items-center space-x-3 hover:text-medical-teal transition-colors duration-200">
+              </a>
+              <a 
+                href="mailto:memorymattersindia@gmail.com"
+                className="flex items-center space-x-3 hover:text-medical-teal transition-colors duration-200"
+              >
                 <Mail size={18} className="text-medical-teal" />
                 <span>memorymattersindia@gmail.com</span>
-              </div>
+              </a>
               <div className="flex items-start space-x-3 hover:text-medical-teal transition-colors duration-200">
                 <MapPin size={18} className="text-medical-teal mt-1 flex-shrink-0" />
                 <div>
@@ -72,14 +78,31 @@ const Footer = () => {
             <div className="space-y-2 text-gray-300">
               <div className="flex items-center space-x-2 hover:text-medical-teal transition-colors duration-200">
                 <Clock size={16} className="text-medical-teal" />
-                <span className="text-sm">Mon-Thu: 8:00 AM - 5:00 PM</span>
+                <span className="text-sm">Mon-Sat: 9:00 AM - 4:00 PM</span>
               </div>
-              <div className="pl-6 text-sm hover:text-medical-teal transition-colors duration-200">Friday: 8:00 AM - 4:00 PM</div>
-              <div className="pl-6 text-sm hover:text-medical-teal transition-colors duration-200">Saturday: 9:00 AM - 1:00 PM</div>
               <div className="pl-6 text-sm">Sunday: Closed</div>
-              <div className="pt-2 text-sm text-medical-teal font-medium">
+              <div className="pt-2 text-sm text-medical-teal font-medium border-t border-gray-600 mt-3">
+                Prior appointment required
+              </div>
+              <div className="text-sm text-medical-teal font-medium">
                 Emergency calls accepted 24/7
               </div>
+            </div>
+            
+            {/* Quick Actions */}
+            <div className="mt-4 space-y-2">
+              <a 
+                href="tel:8904418172"
+                className="block bg-medical-teal hover:bg-medical-teal/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 text-center"
+              >
+                Call Now
+              </a>
+              <Link 
+                to="/appointment"
+                className="block bg-medical-deep-blue hover:bg-medical-deep-blue/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 text-center"
+              >
+                Book Online
+              </Link>
             </div>
           </div>
         </div>

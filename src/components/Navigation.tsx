@@ -54,10 +54,13 @@ const Navigation = () => {
             ))}
             
             {/* Emergency Contact */}
-            <div className="flex items-center space-x-2 text-medical-deep-blue hover:scale-105 transition-transform duration-200">
+            <a 
+              href="tel:8904418172"
+              className="flex items-center space-x-2 text-medical-deep-blue hover:scale-105 transition-transform duration-200 hover:text-medical-teal"
+            >
               <Phone size={16} />
               <span className="text-sm font-medium">89044 18172</span>
-            </div>
+            </a>
             
             <Link to="/appointment">
               <Button className="bg-gradient-to-r from-medical-deep-blue to-medical-teal hover:from-medical-teal hover:to-medical-deep-blue text-white font-inter shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
@@ -94,10 +97,14 @@ const Navigation = () => {
                 </Link>
               ))}
               
-              <div className="flex items-center space-x-2 text-medical-deep-blue pt-2">
+              <a 
+                href="tel:8904418172"
+                className="flex items-center space-x-2 text-medical-deep-blue pt-2"
+                onClick={() => setIsOpen(false)}
+              >
                 <Phone size={16} />
                 <span className="text-sm font-medium">89044 18172</span>
-              </div>
+              </a>
               
               <Link to="/appointment" onClick={() => setIsOpen(false)}>
                 <Button className="bg-gradient-to-r from-medical-deep-blue to-medical-teal hover:from-medical-teal hover:to-medical-deep-blue text-white font-inter w-full shadow-lg">
