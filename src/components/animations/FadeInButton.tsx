@@ -22,7 +22,11 @@ const FadeInButton = forwardRef<HTMLButtonElement, FadeInButtonProps>(({
 }, ref) => {
   const [isPressed, setIsPressed] = useState(false);
 
-  const handleClick = async () => {
+  const handleClick = async (event?: React.MouseEvent<HTMLButtonElement>) => {
+    if (event) {
+      event.preventDefault();
+    }
+    
     if (onClick && !loading && !disabled) {
       setIsPressed(true);
       await onClick();
