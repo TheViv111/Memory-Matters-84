@@ -11,8 +11,8 @@ const GoogleMap = () => {
       <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-0">
         <div className="relative">
           {/* Google Maps Embed using provided code */}
-          <div className="mapouter">
-            <div className="gmap_canvas">
+          <div className="mapouter relative text-right h-96 w-full">
+            <div className="gmap_canvas overflow-hidden h-96 w-full">
               <iframe 
                 width="100%" 
                 height="400" 
@@ -20,8 +20,8 @@ const GoogleMap = () => {
                 src="https://maps.google.com/maps?q=%204,%20Wind%20Tunnel%20Rd,%20Murugeshpalya,%20Kaveri%20Nagar,%20Bengaluru,%20Karnataka%20560017&t=&z=19&ie=UTF8&iwloc=&output=embed" 
                 frameBorder="0" 
                 scrolling="no" 
-                marginHeight="0" 
-                marginWidth="0"
+                marginHeight={0} 
+                marginWidth={0}
                 className="w-full h-96 rounded-t-lg"
                 title="Memory Matters Clinic Location"
                 loading="lazy"
@@ -108,21 +108,6 @@ const GoogleMap = () => {
           </div>
         </Card>
       </div>
-      
-      <style jsx>{`
-        .mapouter {
-          position: relative;
-          text-align: right;
-          height: 400px;
-          width: 100%;
-        }
-        .gmap_canvas {
-          overflow: hidden;
-          background: none !important;
-          height: 400px;
-          width: 100%;
-        }
-      `}</style>
     </div>
   );
 };
