@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -25,15 +26,19 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo and Practice Name */}
           <Link to="/" className="flex items-center space-x-3 hover:scale-105 transition-transform duration-200">
-            <div className="w-10 h-10 bg-gradient-to-br from-medical-teal to-medical-deep-blue rounded-full flex items-center justify-center">
-              <Heart className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <div className="font-playfair text-xl font-bold text-medical-charcoal">
-                Memory Matters
-              </div>
-              <div className="font-inter text-xs text-medical-teal">
-                Dr. Soumya Hegde
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/lovable-uploads/026f1fcb-ae74-45c4-8820-c731bdfb10e4.png" 
+                alt="Memory Matters Logo" 
+                className="w-10 h-10 object-contain"
+              />
+              <div>
+                <div className="font-playfair text-xl font-bold text-medical-charcoal">
+                  Memory Matters
+                </div>
+                <div className="font-inter text-xs text-medical-teal">
+                  Dr. Soumya Hegde
+                </div>
               </div>
             </div>
           </Link>
@@ -45,50 +50,50 @@ const Navigation = () => {
               className="font-inter font-medium text-gray-700 hover:text-medical-teal transition-colors duration-200 relative group"
             >
               Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-medical-teal transition-all duration-200 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-medical-orange transition-all duration-200 group-hover:w-full"></span>
             </Link>
             <Link 
               to="/about" 
               className="font-inter font-medium text-gray-700 hover:text-medical-teal transition-colors duration-200 relative group"
             >
               About
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-medical-teal transition-all duration-200 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-medical-orange transition-all duration-200 group-hover:w-full"></span>
             </Link>
             <Link 
               to="/services" 
               className="font-inter font-medium text-gray-700 hover:text-medical-teal transition-colors duration-200 relative group"
             >
               Services
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-medical-teal transition-all duration-200 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-medical-orange transition-all duration-200 group-hover:w-full"></span>
             </Link>
             <Link 
               to="/faqs" 
               className="font-inter font-medium text-gray-700 hover:text-medical-teal transition-colors duration-200 relative group"
             >
               FAQs
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-medical-teal transition-all duration-200 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-medical-orange transition-all duration-200 group-hover:w-full"></span>
             </Link>
             <Link 
               to="/contact" 
               className="font-inter font-medium text-gray-700 hover:text-medical-teal transition-colors duration-200 relative group"
             >
               Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-medical-teal transition-all duration-200 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-medical-orange transition-all duration-200 group-hover:w-full"></span>
             </Link>
             
             {/* CTA Button */}
             <Link to="/appointment">
-              <Button className="bg-medical-deep-blue hover:bg-medical-deep-blue/90 text-white px-6 py-2 font-inter shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <Button className="bg-gradient-to-r from-medical-deep-blue to-medical-teal hover:from-medical-teal hover:to-medical-orange text-white px-6 py-2 font-inter shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 Book Appointment
               </Button>
             </Link>
             
             {/* Emergency Contact */}
-            <div className="flex items-center space-x-2 px-4 py-2 bg-medical-teal/5 rounded-lg border border-medical-teal/20">
-              <Phone className="w-4 h-4 text-medical-teal" />
+            <div className="flex items-center space-x-2 px-4 py-2 bg-medical-orange/5 rounded-lg border border-medical-orange/20">
+              <Phone className="w-4 h-4 text-medical-orange" />
               <a 
                 href="tel:8904418172" 
-                className="font-inter text-sm font-medium text-medical-deep-blue hover:text-medical-teal transition-colors"
+                className="font-inter text-sm font-medium text-medical-deep-blue hover:text-medical-orange transition-colors"
               >
                 89044 18172
               </a>
@@ -149,13 +154,13 @@ const Navigation = () => {
               
               <div className="pt-4 border-t border-gray-100 space-y-3">
                 <Link to="/appointment" onClick={() => setIsOpen(false)}>
-                  <Button className="w-full bg-medical-deep-blue hover:bg-medical-deep-blue/90 text-white font-inter">
+                  <Button className="w-full bg-gradient-to-r from-medical-deep-blue to-medical-teal hover:from-medical-teal hover:to-medical-orange text-white font-inter">
                     Book Appointment
                   </Button>
                 </Link>
                 
-                <div className="flex items-center justify-center space-x-2 px-4 py-2 bg-medical-teal/5 rounded-lg border border-medical-teal/20">
-                  <Phone className="w-4 h-4 text-medical-teal" />
+                <div className="flex items-center justify-center space-x-2 px-4 py-2 bg-medical-orange/5 rounded-lg border border-medical-orange/20">
+                  <Phone className="w-4 h-4 text-medical-orange" />
                   <a 
                     href="tel:8904418172" 
                     className="font-inter text-sm font-medium text-medical-deep-blue"

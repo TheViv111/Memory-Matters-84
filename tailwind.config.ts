@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -23,12 +24,14 @@ export default {
 				'inter': ['Inter', 'sans-serif'],
 			},
 			colors: {
-				// Medical brand colors
-				'medical-teal': '#4CB5AE',
+				// Memory Matters brand colors (matching the logo)
+				'medical-teal': '#2E86AB', // Blue from logo
 				'medical-lavender': '#A398D2',
 				'medical-beige': '#F6F4F1',
 				'medical-charcoal': '#2D2D2D',
-				'medical-deep-blue': '#1E3A5F',
+				'medical-deep-blue': '#1A5F7A', // Darker blue from logo
+				'medical-orange': '#F57C00', // Orange accent from logo
+				'medical-light-blue': '#87CEEB', // Light blue variation
 				
 				// Existing shadcn colors
 				border: 'hsl(var(--border))',

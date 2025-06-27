@@ -22,11 +22,8 @@ const FadeInButton = forwardRef<HTMLButtonElement, FadeInButtonProps>(({
 }, ref) => {
   const [isPressed, setIsPressed] = useState(false);
 
-  const handleClick = async (event?: React.MouseEvent<HTMLButtonElement>) => {
-    if (event) {
-      event.preventDefault();
-    }
-    
+  const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
+    // Don't prevent default for popover triggers
     if (onClick && !loading && !disabled) {
       setIsPressed(true);
       await onClick();
