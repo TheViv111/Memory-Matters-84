@@ -9,7 +9,7 @@ import { format } from 'date-fns';
 import { Calendar as CalendarIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import ScrollReveal from '@/components/animations/ScrollReveal';
-import FadeInButton from '@/components/animations/FadeInButton';
+import { Button } from '@/components/ui/button';
 
 interface BookingFormProps {
   selectedDate: Date | undefined;
@@ -44,7 +44,8 @@ const BookingForm = ({ selectedDate, setSelectedDate, selectedTime, setSelectedT
               </Label>
               <Popover>
                 <PopoverTrigger asChild>
-                  <FadeInButton
+                  <Button
+                    variant="outline"
                     className={cn(
                       "w-full justify-start text-left font-normal bg-white border-2 hover:bg-gray-50 hover:border-medical-teal transition-all duration-200",
                       !selectedDate && "text-muted-foreground",
@@ -53,15 +54,15 @@ const BookingForm = ({ selectedDate, setSelectedDate, selectedTime, setSelectedT
                   >
                     <CalendarIcon className="mr-2 h-4 w-4 text-medical-teal" />
                     {selectedDate ? format(selectedDate, "PPP") : "Select a date"}
-                  </FadeInButton>
+                  </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
+                <PopoverContent className="w-auto p-0 bg-white border-2 border-medical-teal/20 shadow-lg" align="start">
                   <Calendar
                     mode="single"
                     selected={selectedDate}
                     onSelect={setSelectedDate}
                     disabled={(date) => date < new Date() || date.getDay() === 0}
-                    className="rounded-md border shadow-lg bg-white"
+                    className="rounded-md bg-white pointer-events-auto"
                     initialFocus
                   />
                 </PopoverContent>

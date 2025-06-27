@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -5,8 +6,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Heart, Users, Calendar, Shield, Star, Phone, Clock, CheckCircle } from 'lucide-react';
+
 const Index = () => {
-  return <div className="min-h-screen bg-medical-beige">
+  return (
+    <div className="min-h-screen bg-medical-beige">
       <Navigation />
       
       {/* Hero Section */}
@@ -59,10 +62,11 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-medical-teal/20 to-medical-deep-blue/20 rounded-3xl transform rotate-3 hover:rotate-6 transition-transform duration-500"></div>
               <div className="absolute inset-0 bg-gradient-to-tr from-medical-deep-blue/10 to-medical-teal/10 rounded-3xl transform -rotate-3 hover:-rotate-6 transition-transform duration-500"></div>
               <div className="relative bg-white p-3 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
-                <img alt="Dr. Soumya Hegde - Neurologist and Memory Care Specialist" className="w-full h-96 object-cover rounded-2xl" onError={e => {
-                const target = e.target as HTMLImageElement;
-                target.src = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80";
-              }} src="https://th.bing.com/th/id/OIP._qKVdNOKwA0IaxoeKKvw_wHaD4?w=314&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" />
+                <img 
+                  alt="Dr. Soumya Hegde - Neurologist and Memory Care Specialist" 
+                  className="w-full h-[500px] object-cover object-center rounded-2xl" 
+                  src="/lovable-uploads/d2a52f41-086d-4bdd-b753-d979277c6651.png"
+                />
                 <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 </div>
@@ -115,19 +119,21 @@ const Index = () => {
             icon: <Clock className="w-8 h-8 text-medical-teal" />,
             title: "Botox Therapy",
             description: "Therapeutic Botox injections for neurological conditions including chronic migraines and movement disorders."
-          }].map((service, index) => <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:scale-105 bg-gradient-to-br from-white to-gray-50 border-0">
-                <CardContent className="p-6">
-                  <div className="mb-4 p-3 bg-gradient-to-br from-medical-teal/10 to-medical-deep-blue/10 rounded-full w-fit">
-                    {service.icon}
-                  </div>
-                  <h3 className="font-playfair text-xl text-medical-charcoal mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="font-inter text-gray-600 leading-relaxed">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </Card>)}
+          }].map((service, index) => (
+            <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:scale-105 bg-gradient-to-br from-white to-gray-50 border-0">
+              <CardContent className="p-6">
+                <div className="mb-4 p-3 bg-gradient-to-br from-medical-teal/10 to-medical-deep-blue/10 rounded-full w-fit">
+                  {service.icon}
+                </div>
+                <h3 className="font-playfair text-xl text-medical-charcoal mb-3">
+                  {service.title}
+                </h3>
+                <p className="font-inter text-gray-600 leading-relaxed">
+                  {service.description}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
           </div>
           
           <div className="text-center mt-12">
@@ -147,10 +153,11 @@ const Index = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-medical-teal/20 to-medical-deep-blue/20 rounded-2xl transform rotate-2 hover:rotate-3 transition-transform duration-500"></div>
               <div className="relative bg-white p-3 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
-                <img alt="Dr. Soumya Hegde in her office" className="w-full h-96 object-cover rounded-xl" onError={e => {
-                const target = e.target as HTMLImageElement;
-                target.src = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80";
-              }} src="https://th.bing.com/th/id/OIP._qKVdNOKwA0IaxoeKKvw_wHaD4?w=314&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" />
+                <img 
+                  alt="Dr. Soumya Hegde in her office" 
+                  className="w-full h-[500px] object-cover object-center rounded-xl" 
+                  src="/lovable-uploads/d2a52f41-086d-4bdd-b753-d979277c6651.png"
+                />
               </div>
             </div>
             <div>
@@ -180,10 +187,12 @@ const Index = () => {
               </div>
               
               <div className="space-y-3 mb-8">
-                {["MD Neurology - NIMHANS, Bangalore", "Fellowship in Movement Disorders", "Board-Certified Neurologist", "Published Researcher & Speaker"].map((credential, index) => <div key={index} className="flex items-center space-x-3">
+                {["MD Neurology - NIMHANS, Bangalore", "Fellowship in Movement Disorders", "Board-Certified Neurologist", "Published Researcher & Speaker"].map((credential, index) => (
+                  <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-medical-teal" />
                     <span className="font-inter text-gray-700">{credential}</span>
-                  </div>)}
+                  </div>
+                ))}
               </div>
               
               <Link to="/about">
@@ -225,23 +234,29 @@ const Index = () => {
             relation: "Patient",
             content: "The memory assessment was thorough yet comfortable. Dr. Hegde and her team made me feel heard and respected throughout the entire process.",
             rating: 5
-          }].map((testimonial, index) => <Card key={index} className={`border-l-4 border-medical-teal hover:shadow-xl transition-all duration-300 hover:scale-105 ${testimonial.featured ? 'bg-gradient-to-br from-medical-teal/5 to-medical-deep-blue/5 ring-2 ring-medical-teal/20' : ''}`}>
-                <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />)}
-                  </div>
-                  <p className="font-inter text-gray-700 mb-4 italic leading-relaxed">
-                    "{testimonial.content}"
-                  </p>
-                  <div>
-                    <p className="font-semibold text-medical-charcoal">{testimonial.name}</p>
-                    <p className="text-sm text-gray-600">{testimonial.relation}</p>
-                    {testimonial.featured && <div className="mt-2 inline-flex items-center px-2 py-1 bg-medical-teal/10 rounded-full">
-                        <span className="text-xs text-medical-teal font-medium">Featured Review</span>
-                      </div>}
-                  </div>
-                </CardContent>
-              </Card>)}
+          }].map((testimonial, index) => (
+            <Card key={index} className={`border-l-4 border-medical-teal hover:shadow-xl transition-all duration-300 hover:scale-105 ${testimonial.featured ? 'bg-gradient-to-br from-medical-teal/5 to-medical-deep-blue/5 ring-2 ring-medical-teal/20' : ''}`}>
+              <CardContent className="p-6">
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="font-inter text-gray-700 mb-4 italic leading-relaxed">
+                  "{testimonial.content}"
+                </p>
+                <div>
+                  <p className="font-semibold text-medical-charcoal">{testimonial.name}</p>
+                  <p className="text-sm text-gray-600">{testimonial.relation}</p>
+                  {testimonial.featured && (
+                    <div className="mt-2 inline-flex items-center px-2 py-1 bg-medical-teal/10 rounded-full">
+                      <span className="text-xs text-medical-teal font-medium">Featured Review</span>
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
           </div>
         </div>
       </section>
@@ -283,6 +298,8 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;

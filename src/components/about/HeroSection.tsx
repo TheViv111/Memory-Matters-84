@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 
@@ -12,6 +11,7 @@ const HeroSection = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <ScrollReveal direction="left" delay={0.1}>
+            
             <div>
               <div className="inline-flex items-center px-4 py-2 bg-medical-teal/10 rounded-full mb-6">
                 <span className="text-medical-teal font-inter text-sm font-medium">Geriatric Psychiatrist</span>
@@ -60,8 +60,8 @@ const HeroSection = () => {
               <div className="relative bg-white p-3 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
                 <img 
                   alt="Dr. Soumya Hegde - Geriatric Psychiatrist specializing in memory care and cognitive disorders" 
-                  src="/lovable-uploads/8474fc37-7fed-4d5b-ba83-344823728218.png"
-                  className="w-full h-[500px] rounded-2xl object-cover bg-gray-50" 
+                  src="/lovable-uploads/d2a52f41-086d-4bdd-b753-d979277c6651.png"
+                  className="w-full h-[600px] rounded-2xl object-cover object-center bg-gray-50" 
                 />
                 <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
                   <div className="w-3 h-3 bg-medical-orange rounded-full animate-pulse"></div>
