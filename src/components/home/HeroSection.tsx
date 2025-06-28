@@ -26,12 +26,12 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <spline-viewer 
           url="https://prod.spline.design/Wb6IgOLXSnvJPJT6/scene.splinecode"
-          style={{ width: '100%', height: '100%', opacity: '0.3' }}
+          style={{ width: '100%', height: '100%', opacity: '0.7' }}
         />
       </div>
       
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-medical-beige/80 via-medical-beige/60 to-transparent z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-medical-beige/60 via-medical-beige/40 to-transparent z-10" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 h-screen flex items-center">
         <div className="w-full text-left">
