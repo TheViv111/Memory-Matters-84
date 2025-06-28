@@ -7,12 +7,12 @@ import { Phone, Sparkles, Shield, Heart } from 'lucide-react';
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-medical-beige via-white to-medical-teal/10 overflow-hidden">
-      {/* Spline-inspired 3D background */}
+      {/* Spline-inspired 3D background without blur */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-medical-teal/20 to-medical-deep-blue/20 rounded-full blur-xl animate-pulse" />
-        <div className="absolute top-40 right-20 w-48 h-48 bg-gradient-to-br from-medical-orange/15 to-medical-teal/15 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-40 left-1/4 w-24 h-24 bg-gradient-to-br from-medical-deep-blue/25 to-medical-orange/25 rounded-full blur-lg animate-pulse" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-gradient-to-br from-medical-teal/10 to-medical-deep-blue/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-medical-teal/20 to-medical-deep-blue/20 rounded-full animate-pulse" />
+        <div className="absolute top-40 right-20 w-48 h-48 bg-gradient-to-br from-medical-orange/15 to-medical-teal/15 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-40 left-1/4 w-24 h-24 bg-gradient-to-br from-medical-deep-blue/25 to-medical-orange/25 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-gradient-to-br from-medical-teal/10 to-medical-deep-blue/10 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
         
         {/* Floating geometric shapes */}
         <div className="absolute top-1/4 left-1/2 w-6 h-6 bg-medical-teal/30 transform rotate-45 animate-bounce" style={{ animationDelay: '3s' }} />
