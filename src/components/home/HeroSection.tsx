@@ -1,25 +1,22 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Phone, Clock, CheckCircle, Star, Award, Shield, Users, Calendar } from 'lucide-react';
-
 const HeroSection = () => {
-  return (
-    <section className="relative min-h-screen bg-gradient-to-br from-white via-medical-beige/30 to-medical-teal/5 overflow-hidden">
+  return <section className="relative min-h-screen bg-gradient-to-br from-white via-medical-beige/30 to-medical-teal/5 overflow-hidden">
       {/* Professional Background Pattern */}
       <div className="absolute inset-0 z-0">
         {/* Subtle medical cross pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="grid grid-cols-12 gap-8 h-full">
-            {Array.from({ length: 48 }).map((_, i) => (
-              <div key={i} className="relative">
+            {Array.from({
+            length: 48
+          }).map((_, i) => <div key={i} className="relative">
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4">
                   <div className="w-full h-0.5 bg-medical-teal"></div>
                   <div className="w-0.5 h-full bg-medical-teal absolute top-0 left-1/2 transform -translate-x-1/2"></div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
         
@@ -76,21 +73,7 @@ const HeroSection = () => {
             </div>
             
             {/* Contact Information */}
-            <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-lg border-l-4 border-medical-teal p-6 hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center space-x-4">
-                <div className="bg-gradient-to-br from-medical-teal/20 to-medical-deep-blue/20 p-4 rounded-full">
-                  <Phone className="text-medical-deep-blue" size={24} />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600 mb-1">Professional Consultation</p>
-                  <p className="font-semibold text-medical-deep-blue text-xl">+91 89044 18172</p>
-                  <div className="flex items-center mt-2 text-sm text-gray-500">
-                    <Clock size={14} className="mr-1" />
-                    <span>Mon-Sat: 9:00 AM - 4:00 PM</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
           
           {/* Professional Doctor Card - Moved Up */}
@@ -102,11 +85,7 @@ const HeroSection = () => {
                   {/* Doctor Image */}
                   <div className="text-center">
                     <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-xl border-4 border-white">
-                      <img 
-                        src="/lovable-uploads/76dc60d7-260b-44ed-8802-e008f6b9a2dd.png" 
-                        alt="Dr. Soumya Hegde" 
-                        className="w-full h-full object-cover"
-                      />
+                      <img src="/lovable-uploads/76dc60d7-260b-44ed-8802-e008f6b9a2dd.png" alt="Dr. Soumya Hegde" className="w-full h-full object-cover" />
                     </div>
                     <h3 className="font-playfair text-2xl text-medical-charcoal mb-2">Dr. Soumya Hegde</h3>
                     <p className="font-inter text-medical-teal font-medium">Geriatric Psychiatrist</p>
@@ -157,8 +136,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
