@@ -5,10 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Heart, Users, Calendar, Shield, Star, Phone, Clock, CheckCircle } from 'lucide-react';
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-medical-beige">
+  return <div className="min-h-screen bg-medical-beige">
       <Navigation />
       
       {/* Hero Section */}
@@ -20,7 +18,8 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center animate-fade-in">
             <div className="inline-flex items-center px-4 py-2 bg-medical-teal/10 rounded-full mb-6">
-              <span className="text-medical-teal font-inter text-sm font-medium">Board-Certified Neurologist</span>
+              <span className="text-medical-teal font-inter text-sm font-medium">Geriatric Psychiatrist
+            </span>
             </div>
             
             <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl text-medical-charcoal mb-6 leading-tight">
@@ -261,8 +260,6 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
