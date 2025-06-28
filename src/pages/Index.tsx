@@ -5,8 +5,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Heart, Users, Calendar, Shield, Star, Phone, Clock, CheckCircle } from 'lucide-react';
+
 const Index = () => {
-  return <div className="min-h-screen bg-medical-beige">
+  return (
+    <div className="min-h-screen bg-medical-beige">
       <Navigation />
       
       {/* Hero Section */}
@@ -16,49 +18,41 @@ const Index = () => {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-medical-deep-blue/10 rounded-full blur-3xl" />
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
-              <div className="inline-flex items-center px-4 py-2 bg-medical-teal/10 rounded-full mb-6">
-                <span className="text-medical-teal font-inter text-sm font-medium">Board-Certified Neurologist</span>
-              </div>
-              
-              <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl text-medical-charcoal mb-6 leading-tight">
-                Compassionate Care for 
-                <span className="text-medical-teal"> Memory & Mind</span>
-              </h1>
-              <p className="font-inter text-lg text-gray-700 mb-8 leading-relaxed">
-                Dr. Soumya Hegde and our dedicated team provide comprehensive neurological care 
-                and memory services, supporting patients and families through every step of their journey.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/appointment">
-                  <Button className="bg-medical-deep-blue hover:bg-medical-deep-blue/90 text-white px-8 py-3 text-lg font-inter shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    Schedule Consultation
-                  </Button>
-                </Link>
-                <Link to="/about">
-                  <Button variant="outline" className="border-medical-teal text-medical-teal hover:bg-medical-teal hover:text-white px-8 py-3 text-lg font-inter transition-all duration-300 hover:scale-105">
-                    Meet Dr. Hegde
-                  </Button>
-                </Link>
-              </div>
-              
-              {/* Emergency Contact */}
-              <div className="mt-8 p-4 bg-white/80 backdrop-blur-sm rounded-lg shadow-lg border-l-4 border-medical-teal hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center space-x-3">
-                  <Phone className="text-medical-deep-blue" size={20} />
-                  <div>
-                    <p className="text-sm text-gray-600">Call Us At</p>
-                    <p className="font-semibold text-medical-deep-blue">+91 89044 18172</p>
-                  </div>
-                </div>
-              </div>
+          <div className="text-center animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 bg-medical-teal/10 rounded-full mb-6">
+              <span className="text-medical-teal font-inter text-sm font-medium">Board-Certified Neurologist</span>
             </div>
             
-            <div className="relative">
-              
-              <div className="absolute inset-0 bg-gradient-to-tr from-medical-deep-blue/10 to-medical-teal/10 rounded-3xl transform -rotate-3 hover:-rotate-6 transition-transform duration-500"></div>
-              
+            <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl text-medical-charcoal mb-6 leading-tight">
+              Compassionate Care for 
+              <span className="text-medical-teal"> Memory & Mind</span>
+            </h1>
+            <p className="font-inter text-lg text-gray-700 mb-8 leading-relaxed max-w-4xl mx-auto">
+              Dr. Soumya Hegde and our dedicated team provide comprehensive neurological care 
+              and memory services, supporting patients and families through every step of their journey.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/appointment">
+                <Button className="bg-medical-deep-blue hover:bg-medical-deep-blue/90 text-white px-8 py-3 text-lg font-inter shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  Schedule Consultation
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button variant="outline" className="border-medical-teal text-medical-teal hover:bg-medical-teal hover:text-white px-8 py-3 text-lg font-inter transition-all duration-300 hover:scale-105">
+                  Meet Dr. Hegde
+                </Button>
+              </Link>
+            </div>
+            
+            {/* Emergency Contact */}
+            <div className="mt-8 p-4 bg-white/80 backdrop-blur-sm rounded-lg shadow-lg border-l-4 border-medical-teal hover:shadow-xl transition-all duration-300 max-w-md mx-auto">
+              <div className="flex items-center space-x-3">
+                <Phone className="text-medical-deep-blue" size={20} />
+                <div>
+                  <p className="text-sm text-gray-600">Call Us At</p>
+                  <p className="font-semibold text-medical-deep-blue">+91 89044 18172</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -267,6 +261,8 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
