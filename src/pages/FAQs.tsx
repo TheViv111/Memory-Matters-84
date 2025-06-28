@@ -2,6 +2,7 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import ScrollReveal from '@/components/animations/ScrollReveal';
 import { 
   Accordion,
   AccordionContent,
@@ -54,81 +55,99 @@ const FAQs = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-medical-beige">
+    <div className="min-h-screen bg-gradient-to-br from-medical-beige via-white to-medical-teal/5">
       <Navigation />
       
-      {/* Hero Section */}
+      {/* Enhanced Hero Section */}
       <section className="py-20 bg-gradient-to-br from-medical-beige via-white to-medical-teal/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-medical-teal/5 to-medical-deep-blue/5" />
-        <div className="absolute top-0 right-0 w-72 h-72 bg-medical-teal/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-medical-teal/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-medical-orange/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-          <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl text-medical-charcoal mb-8 leading-tight">
-            Frequently Asked Questions
-          </h1>
-          <div className="w-20 h-1 bg-medical-teal mx-auto mb-8"></div>
-          <p className="font-inter text-xl text-gray-600 max-w-2xl mx-auto">
-            Find answers to common questions about our services, appointments, and treatment approach.
-          </p>
+          <ScrollReveal direction="up" delay={0.1}>
+            <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl text-medical-charcoal mb-8 leading-tight">
+              Frequently Asked Questions
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.3}>
+            <div className="w-20 h-1 bg-gradient-to-r from-medical-teal to-medical-orange mx-auto mb-8 rounded-full shadow-md"></div>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.5}>
+            <p className="font-inter text-xl text-gray-600 max-w-2xl mx-auto">
+              Find answers to common questions about our services, appointments, and treatment approach.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* FAQs Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Enhanced FAQs Section */}
+      <section className="py-16 bg-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-72 h-72 bg-medical-deep-blue/3 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-medical-orange/3 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <Accordion type="single" collapsible className="w-full space-y-4">
-            {faqs.map((faq) => (
-              <AccordionItem 
-                key={faq.id} 
-                value={faq.id}
-                className="bg-gradient-to-r from-gray-50 to-white rounded-lg border-0 shadow-md hover:shadow-lg transition-all duration-300"
-              >
-                <AccordionTrigger className="px-8 py-6 text-left hover:no-underline">
-                  <div className="flex items-center space-x-6 w-full">
-                    <div className="bg-medical-teal/10 text-medical-teal font-playfair text-xl font-bold w-16 h-16 rounded-lg flex items-center justify-center flex-shrink-0">
-                      {faq.id}
+            {faqs.map((faq, index) => (
+              <ScrollReveal key={faq.id} direction="up" delay={0.1 * (index + 1)}>
+                <AccordionItem 
+                  value={faq.id}
+                  className="bg-gradient-to-r from-gray-50/80 via-white to-gray-50/80 rounded-xl border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] backdrop-blur-sm group"
+                >
+                  <AccordionTrigger className="px-8 py-6 text-left hover:no-underline group-hover:bg-gradient-to-r group-hover:from-medical-teal/5 group-hover:to-medical-orange/5 rounded-xl transition-all duration-300">
+                    <div className="flex items-center space-x-6 w-full">
+                      <div className="bg-gradient-to-br from-medical-teal/10 to-medical-orange/10 text-medical-teal font-playfair text-xl font-bold w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110 border border-medical-teal/20">
+                        {faq.id}
+                      </div>
+                      <h3 className="font-inter text-lg font-medium text-medical-charcoal text-left group-hover:text-medical-deep-blue transition-colors duration-300">
+                        {faq.question}
+                      </h3>
                     </div>
-                    <h3 className="font-inter text-lg font-medium text-medical-charcoal text-left">
-                      {faq.question}
-                    </h3>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-8 pb-6">
-                  <div className="ml-22">
-                    <p className="font-inter text-gray-700 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-8 pb-6">
+                    <div className="ml-22">
+                      <p className="font-inter text-gray-700 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </ScrollReveal>
             ))}
           </Accordion>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16 bg-gradient-to-br from-medical-beige to-medical-teal/10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal mb-6">
-            Still Have Questions?
-          </h2>
-          <p className="font-inter text-lg text-gray-600 mb-8">
-            We're here to help. Contact us directly for personalized answers to your concerns.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="tel:8904418172"
-              className="inline-flex items-center justify-center bg-medical-teal hover:bg-medical-teal/90 text-white px-8 py-3 rounded-lg font-inter font-medium transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              Call Us: 89044 18172
-            </a>
-            <a 
-              href="mailto:memorymattersindia@gmail.com"
-              className="inline-flex items-center justify-center border-2 border-medical-teal text-medical-teal hover:bg-medical-teal hover:text-white px-8 py-3 rounded-lg font-inter font-medium transition-all duration-300 hover:scale-105"
-            >
-              Email Us
-            </a>
-          </div>
+      {/* Enhanced Contact Section */}
+      <section className="py-16 bg-gradient-to-br from-medical-beige to-medical-teal/10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-medical-teal/5 to-medical-orange/5" />
+        <div className="absolute top-0 right-0 w-64 h-64 bg-medical-deep-blue/10 rounded-full blur-3xl animate-pulse" />
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          <ScrollReveal direction="up" delay={0.1}>
+            <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal mb-6">
+              Still Have Questions?
+            </h2>
+            <p className="font-inter text-lg text-gray-600 mb-8">
+              We're here to help. Contact us directly for personalized answers to your concerns.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.3}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="tel:8904418172"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-medical-teal to-medical-deep-blue hover:from-medical-deep-blue hover:to-medical-teal text-white px-8 py-3 rounded-xl font-inter font-medium transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl backdrop-blur-sm"
+              >
+                Call Us: 89044 18172
+              </a>
+              <a 
+                href="mailto:memorymattersindia@gmail.com"
+                className="inline-flex items-center justify-center border-2 border-medical-teal bg-white/80 text-medical-teal hover:bg-gradient-to-r hover:from-medical-teal hover:to-medical-deep-blue hover:text-white px-8 py-3 rounded-xl font-inter font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl backdrop-blur-sm"
+              >
+                Email Us
+              </a>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

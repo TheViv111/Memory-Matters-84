@@ -112,7 +112,10 @@ const Appointment = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-medical-beige via-white to-medical-teal/5">
+    <div className="min-h-screen bg-gradient-to-br from-medical-beige via-white to-medical-teal/5 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-r from-medical-teal/3 to-medical-orange/3 pointer-events-none" />
+      
       <Navigation />
       
       <AppointmentHero />
@@ -122,9 +125,12 @@ const Appointment = () => {
         setAppointmentType={setAppointmentType}
       />
 
-      {/* Main Booking Form */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Enhanced Main Booking Form */}
+      <section className="py-16 bg-white/80 backdrop-blur-sm relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-medical-teal/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-medical-orange/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <form onSubmit={handleSubmit} className="space-y-8">
             <BookingForm
               selectedDate={selectedDate}
@@ -153,7 +159,7 @@ const Appointment = () => {
                 <FadeInButton 
                   type="submit" 
                   loading={isSubmitting}
-                  className="bg-gradient-to-r from-medical-deep-blue to-medical-teal hover:from-medical-teal hover:to-medical-deep-blue text-white px-12 py-4 text-lg font-inter shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                  className="bg-gradient-to-r from-medical-deep-blue to-medical-teal hover:from-medical-teal hover:to-medical-deep-blue text-white px-12 py-4 text-lg font-inter shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 rounded-xl border-2 border-white/50 backdrop-blur-sm"
                 >
                   {isSubmitting ? 'Submitting Request...' : 'Request Appointment'}
                 </FadeInButton>
@@ -166,9 +172,12 @@ const Appointment = () => {
         </div>
       </section>
 
-      {/* Contact Information */}
-      <section className="py-16 bg-gradient-to-br from-medical-beige to-medical-teal/10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Enhanced Contact Information */}
+      <section className="py-16 bg-gradient-to-br from-medical-beige to-medical-teal/10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-medical-teal/5 to-medical-orange/5" />
+        <div className="absolute top-0 right-0 w-72 h-72 bg-medical-deep-blue/10 rounded-full blur-3xl animate-pulse" />
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <ScrollReveal direction="up" delay={0.1}>
             <h2 className="font-playfair text-3xl text-medical-charcoal mb-8">
               Need Help Scheduling?
@@ -203,15 +212,15 @@ const Appointment = () => {
               }
             ].map((item, index) => (
               <ScrollReveal key={index} direction="up" delay={0.2 + index * 0.1}>
-                <Card className="hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+                <Card className="hover:shadow-2xl transition-all duration-500 hover:scale-110 bg-white/90 backdrop-blur-md border-0 shadow-xl group">
                   <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-medical-teal to-medical-deep-blue rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <div className="w-16 h-16 bg-gradient-to-br from-medical-teal to-medical-deep-blue rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl group-hover:scale-110 transition-all duration-300">
                       <item.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="font-playfair text-lg font-semibold text-medical-charcoal mb-2">{item.title}</h3>
+                    <h3 className="font-playfair text-lg font-semibold text-medical-charcoal mb-2 group-hover:text-medical-deep-blue transition-colors duration-300">{item.title}</h3>
                     <p className="font-inter text-medical-deep-blue font-medium mb-1">{item.content}</p>
                     <p className="font-inter text-sm text-gray-600 mb-3">{item.subtitle}</p>
-                    <button className="font-inter text-sm text-medical-teal hover:text-medical-deep-blue transition-colors duration-200 font-medium">
+                    <button className="font-inter text-sm text-medical-teal hover:text-medical-deep-blue transition-colors duration-200 font-medium bg-gradient-to-r from-medical-teal/10 to-medical-orange/10 px-4 py-2 rounded-lg hover:from-medical-teal/20 hover:to-medical-orange/20">
                       {item.action}
                     </button>
                   </CardContent>

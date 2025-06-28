@@ -3,18 +3,20 @@ import React, { useEffect, useRef, useState } from 'react';
 
 interface ScrollRevealProps {
   children: React.ReactNode;
-  direction?: 'up' | 'down' | 'left' | 'right';
+  direction?: 'up' | 'down' | 'left' | 'right' | 'fade';
   delay?: number;
   duration?: number;
   className?: string;
+  threshold?: number;
 }
 
 const ScrollReveal: React.FC<ScrollRevealProps> = ({
   children,
   direction = 'up',
   delay = 0,
-  duration = 0.6,
-  className = ''
+  duration = 0.8,
+  className = '',
+  threshold = 0.1
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -29,7 +31,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
         }
       },
       {
-        threshold: 0.1,
+        threshold,
         rootMargin: '0px 0px -50px 0px'
       }
     );
@@ -43,22 +45,24 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
         observer.unobserve(ref.current);
       }
     };
-  }, [delay]);
+  }, [delay, threshold]);
 
   const getTransform = () => {
-    if (isVisible) return 'translate3d(0, 0, 0)';
+    if (isVisible) return 'translate3d(0, 0, 0) scale(1)';
     
     switch (direction) {
       case 'up':
-        return 'translate3d(0, 40px, 0)';
+        return 'translate3d(0, 60px, 0) scale(0.95)';
       case 'down':
-        return 'translate3d(0, -40px, 0)';
+        return 'translate3d(0, -60px, 0) scale(0.95)';
       case 'left':
-        return 'translate3d(-40px, 0, 0)';
+        return 'translate3d(-60px, 0, 0) scale(0.95)';
       case 'right':
-        return 'translate3d(40px, 0, 0)';
+        return 'translate3d(60px, 0, 0) scale(0.95)';
+      case 'fade':
+        return 'translate3d(0, 0, 0) scale(0.9)';
       default:
-        return 'translate3d(0, 40px, 0)';
+        return 'translate3d(0, 60px, 0) scale(0.95)';
     }
   };
 
@@ -69,7 +73,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
       style={{
         transform: getTransform(),
         opacity: isVisible ? 1 : 0,
-        transition: `all ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94)`,
+        transition: `all ${duration}s cubic-bezier(0.4, 0, 0.2, 1)`,
         willChange: 'transform, opacity'
       }}
     >
