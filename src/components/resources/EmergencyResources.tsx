@@ -22,7 +22,7 @@ const EmergencyResources = () => {
     },
     {
       title: "Dr. Hegde Emergency Line",
-      number: "89044 18172",
+      number: "+91 89044 18172",
       description: "For urgent medical concerns related to memory care",
     }
   ];

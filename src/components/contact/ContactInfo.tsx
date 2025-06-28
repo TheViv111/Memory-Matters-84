@@ -9,7 +9,7 @@ const ContactInfo = () => {
     { 
       icon: Phone, 
       title: "Phone", 
-      content: "89044 18172", 
+      content: "+91 89044 18172", 
       subtitle: "Main Office",
       gradient: "from-blue-500 to-blue-600"
     },
@@ -30,7 +30,7 @@ const ContactInfo = () => {
     { 
       icon: Shield, 
       title: "Emergency", 
-      content: "89044 18172", 
+      content: "+91 89044 18172", 
       subtitle: "24/7 for Existing Patients",
       gradient: "from-red-500 to-red-600"
     }

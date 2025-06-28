@@ -81,9 +81,9 @@ const Navigation = () => {
             </Link>
             
             {/* Contact */}
-            <a href="tel:8904418172" className="flex items-center space-x-2 px-3 py-2 text-medical-deep-blue hover:text-medical-orange transition-colors">
+            <a href="tel:+918904418172" className="flex items-center space-x-2 px-3 py-2 text-medical-deep-blue hover:text-medical-orange transition-colors">
               <Phone className="w-4 h-4" />
-              <span className="font-inter text-sm font-medium">89044 18172</span>
+              <span className="font-inter text-sm font-medium">+91 89044 18172</span>
             </a>
           </div>
 
@@ -131,9 +131,9 @@ const Navigation = () => {
                   </Button>
                 </Link>
                 
-                <a href="tel:8904418172" className="flex items-center justify-center space-x-2 px-4 py-3 text-medical-deep-blue">
+                <a href="tel:+918904418172" className="flex items-center justify-center space-x-2 px-4 py-3 text-medical-deep-blue">
                   <Phone className="w-4 h-4" />
-                  <span className="font-inter text-sm font-medium">89044 18172</span>
+                  <span className="font-inter text-sm font-medium">+91 89044 18172</span>
                 </a>
               </div>
             </div>

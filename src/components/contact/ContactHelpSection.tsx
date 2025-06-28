@@ -25,7 +25,7 @@ const ContactHelpSection = () => {
             { 
               icon: Phone, 
               title: "Call Us", 
-              content: "89044 18172", 
+              content: "+91 89044 18172", 
               subtitle: "Mon-Fri: 8AM-5PM", 
               action: "Call Now" 
             },

@@ -49,7 +49,7 @@ const GoogleMap = () => {
                 </div>
                 <div className="flex items-center space-x-1 mt-1">
                   <Phone className="w-4 h-4 text-medical-teal" />
-                  <span className="font-inter text-xs text-gray-600">89044 18172</span>
+                  <span className="font-inter text-xs text-gray-600">+91 89044 18172</span>
                 </div>
               </div>
             </div>
@@ -91,7 +91,7 @@ const GoogleMap = () => {
             </div>
             <div>
               <p className="font-inter font-medium text-medical-charcoal">Contact</p>
-              <p className="font-inter text-sm text-gray-600">89044 18172</p>
+              <p className="font-inter text-sm text-gray-600">+91 89044 18172</p>
             </div>
           </div>
         </Card>

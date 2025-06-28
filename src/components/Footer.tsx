@@ -26,11 +26,11 @@ const Footer = () => {
             
             <div className="space-y-3">
               <a 
-                href="tel:8904418172"
+                href="tel:+918904418172"
                 className="flex items-center space-x-3 hover:text-medical-teal transition-colors duration-200"
               >
                 <Phone size={18} className="text-medical-teal" />
-                <span>89044 18172</span>
+                <span>+91 89044 18172</span>
               </a>
               <a 
                 href="mailto:memorymattersindia@gmail.com"
@@ -92,7 +92,7 @@ const Footer = () => {
             {/* Quick Actions */}
             <div className="mt-4 space-y-2">
               <a 
-                href="tel:8904418172"
+                href="tel:+918904418172"
                 className="block bg-medical-teal hover:bg-medical-teal/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 text-center"
               >
                 Call Now
