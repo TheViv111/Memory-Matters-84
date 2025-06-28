@@ -1,18 +1,32 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Phone, Clock } from 'lucide-react';
-import Spline from '@splinetool/react-spline';
 
 const HeroSection = () => {
+  useEffect(() => {
+    // Load Spline viewer script
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = 'https://unpkg.com/@splinetool/viewer@1.10.16/build/spline-viewer.js';
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-medical-beige to-white overflow-hidden">
       {/* Spline Background */}
       <div className="absolute inset-0 z-0">
-        <Spline
-          scene="https://prod.spline.design/Wb6IgOLXSnvJPJT6/scene.splinecode"
-          className="w-full h-full opacity-30"
+        <spline-viewer 
+          url="https://prod.spline.design/Wb6IgOLXSnvJPJT6/scene.splinecode"
+          style={{ width: '100%', height: '100%', opacity: '0.3' }}
         />
       </div>
       
