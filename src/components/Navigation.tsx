@@ -56,6 +56,7 @@ const Navigation = () => {
               { name: 'About', path: '/about' },
               { name: 'Services', path: '/services' },
               { name: 'Resources', path: '/resources' },
+              { name: 'FAQs', path: '/faqs' },
               { name: 'Contact', path: '/contact' }
             ].map((item) => (
               <Link 
@@ -108,6 +109,7 @@ const Navigation = () => {
                 { name: 'About', path: '/about' },
                 { name: 'Services', path: '/services' },
                 { name: 'Resources', path: '/resources' },
+                { name: 'FAQs', path: '/faqs' },
                 { name: 'Contact', path: '/contact' }
               ].map((item) => (
                 <Link 
