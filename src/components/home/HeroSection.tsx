@@ -1,9 +1,12 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Phone, Clock, CheckCircle, Star, Award, Shield, Users, Calendar } from 'lucide-react';
+
 const HeroSection = () => {
-  return <section className="relative min-h-screen bg-gradient-to-br from-white via-medical-beige/30 to-medical-teal/5 overflow-hidden">
+  return (
+    <section className="relative min-h-screen bg-gradient-to-br from-white via-medical-beige/30 to-medical-teal/5 overflow-hidden">
       {/* Professional Background Pattern */}
       <div className="absolute inset-0 z-0">
         {/* Subtle medical cross pattern */}
@@ -38,7 +41,7 @@ const HeroSection = () => {
             
             <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl text-medical-charcoal mb-8 leading-tight">
               Expert Care for
-              <span className="block text-medical-teal bg-gradient-to-r from-medical-teal to-medical-deep-blue bg-clip-text text-transparent">
+              <span className="block text-medical-teal bg-gradient-to-r from-medical-teal to-medical-deep-blue bg-clip-text text-transparent py-2 leading-relaxed">
                 Aging Minds
               </span>
               <span className="block text-medical-deep-blue text-4xl md:text-5xl lg:text-6xl mt-4">
@@ -138,6 +141,8 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
