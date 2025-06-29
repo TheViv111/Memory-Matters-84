@@ -25,7 +25,7 @@ const FAQs = () => {
     {
       id: "03",
       question: "How much is the fee?",
-      answer: "Consultation fees vary based on the type of session and duration. Please contact our office at 89044 18172 for detailed pricing information."
+      answer: "Consultation fees vary based on the type of session and duration. Please contact our office at +91 89044 18172 for detailed pricing information."
     },
     {
       id: "04",
@@ -58,7 +58,7 @@ const FAQs = () => {
     <div className="min-h-screen bg-gradient-to-br from-medical-beige via-white to-medical-teal/5">
       <Navigation />
       
-      {/* Enhanced Hero Section */}
+      {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-medical-beige via-white to-medical-teal/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-medical-teal/5 to-medical-deep-blue/5" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-medical-teal/10 rounded-full blur-3xl animate-pulse" />
@@ -81,32 +81,29 @@ const FAQs = () => {
         </div>
       </section>
 
-      {/* Enhanced FAQs Section */}
+      {/* FAQs Section */}
       <section className="py-16 bg-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-medical-deep-blue/3 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-medical-orange/3 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
-        
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <Accordion type="single" collapsible className="w-full space-y-4">
+          <Accordion type="single" collapsible className="w-full space-y-6">
             {faqs.map((faq, index) => (
               <ScrollReveal key={faq.id} direction="up" delay={0.1 * (index + 1)}>
                 <AccordionItem 
                   value={faq.id}
-                  className="bg-gradient-to-r from-gray-50/80 via-white to-gray-50/80 rounded-xl border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] backdrop-blur-sm group"
+                  className="bg-gradient-to-r from-gray-50 to-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.01] overflow-hidden"
                 >
-                  <AccordionTrigger className="px-8 py-6 text-left hover:no-underline group-hover:bg-gradient-to-r group-hover:from-medical-teal/5 group-hover:to-medical-orange/5 rounded-xl transition-all duration-300">
+                  <AccordionTrigger className="px-8 py-6 text-left hover:no-underline group hover:bg-gradient-to-r hover:from-medical-teal/5 hover:to-medical-orange/5 transition-all duration-300">
                     <div className="flex items-center space-x-6 w-full">
-                      <div className="bg-gradient-to-br from-medical-teal/10 to-medical-orange/10 text-medical-teal font-playfair text-xl font-bold w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110 border border-medical-teal/20">
+                      <div className="bg-gradient-to-br from-medical-teal/20 to-medical-deep-blue/20 text-medical-deep-blue font-playfair text-2xl font-bold w-20 h-20 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:scale-105 border border-medical-teal/10">
                         {faq.id}
                       </div>
-                      <h3 className="font-inter text-lg font-medium text-medical-charcoal text-left group-hover:text-medical-deep-blue transition-colors duration-300">
+                      <h3 className="font-inter text-lg font-semibold text-medical-charcoal text-left group-hover:text-medical-deep-blue transition-colors duration-300 leading-relaxed">
                         {faq.question}
                       </h3>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="px-8 pb-6">
-                    <div className="ml-22">
-                      <p className="font-inter text-gray-700 leading-relaxed">
+                  <AccordionContent className="px-8 pb-8">
+                    <div className="ml-26 bg-gradient-to-r from-medical-beige/30 to-white p-6 rounded-xl border-l-4 border-medical-teal">
+                      <p className="font-inter text-gray-700 leading-relaxed text-base">
                         {faq.answer}
                       </p>
                     </div>
@@ -118,7 +115,7 @@ const FAQs = () => {
         </div>
       </section>
 
-      {/* Enhanced Contact Section */}
+      {/* Contact Section */}
       <section className="py-16 bg-gradient-to-br from-medical-beige to-medical-teal/10 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-medical-teal/5 to-medical-orange/5" />
         <div className="absolute top-0 right-0 w-64 h-64 bg-medical-deep-blue/10 rounded-full blur-3xl animate-pulse" />
@@ -135,10 +132,10 @@ const FAQs = () => {
           <ScrollReveal direction="up" delay={0.3}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="tel:8904418172"
+                href="tel:+918904418172"
                 className="inline-flex items-center justify-center bg-gradient-to-r from-medical-teal to-medical-deep-blue hover:from-medical-deep-blue hover:to-medical-teal text-white px-8 py-3 rounded-xl font-inter font-medium transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl backdrop-blur-sm"
               >
-                Call Us: 89044 18172
+                Call Us: +91 89044 18172
               </a>
               <a 
                 href="mailto:memorymattersindia@gmail.com"
