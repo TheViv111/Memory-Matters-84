@@ -12,8 +12,8 @@ const LoadingPage = () => {
       <div className="text-center z-10">
         {/* Logo and branding */}
         <div className="flex items-center justify-center space-x-3 mb-8">
-          <div className="w-16 h-16 bg-gradient-to-br from-medical-teal to-medical-deep-blue rounded-full flex items-center justify-center shadow-2xl animate-pulse">
-            <span className="text-white font-bold text-2xl">M</span>
+          <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl animate-pulse overflow-hidden p-1">
+            <img src="/logo.jpeg" alt="Memory Matters Logo" className="w-full h-full object-cover rounded-full" />
           </div>
           <div>
             <h1 className="font-playfair text-3xl text-medical-charcoal font-semibold">

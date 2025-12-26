@@ -85,7 +85,7 @@ const HeroSection = () => {
                   {/* Doctor Image */}
                   <div className="text-center">
                     <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-xl border-4 border-white">
-                      <img src="/lovable-uploads/76dc60d7-260b-44ed-8802-e008f6b9a2dd.png" alt="Dr. Soumya Hegde" className="w-full h-full object-cover" />
+                      <img src="/images/76dc60d7-260b-44ed-8802-e008f6b9a2dd.png" alt="Dr. Soumya Hegde" className="w-full h-full object-cover" />
                     </div>
                     <h3 className="font-playfair text-2xl text-medical-charcoal mb-2">Dr. Soumya Hegde</h3>
                     <p className="font-inter text-medical-teal font-medium">Geriatric Psychiatrist</p>

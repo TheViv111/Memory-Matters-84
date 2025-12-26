@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import ScrollReveal from '@/components/animations/ScrollReveal';
 import FadeInButton from '@/components/animations/FadeInButton';
 import ContactFormHeader from './ContactFormHeader';
 import ContactFormFields from './ContactFormFields';
@@ -25,7 +24,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       toast({
         title: "Incomplete Information",
@@ -50,7 +49,7 @@ const ContactForm = () => {
         title: "Message Sent Successfully! ✨",
         description: "Thank you for contacting us. We'll respond within 24 hours.",
       });
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -75,31 +74,29 @@ const ContactForm = () => {
 
   return (
     <div className="w-full">
-      <ScrollReveal direction="left" delay={0.1}>
-        <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mx-2 sm:mx-0">
-          <ContactFormHeader />
-          <CardContent className="p-4 sm:p-6">
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-              <ContactFormFields 
-                formData={formData}
-                onFieldChange={handleInputChange}
-              />
-              
-              <FadeInButton 
-                type="submit" 
-                loading={isSubmitting}
-                className="bg-medical-deep-blue hover:bg-medical-deep-blue/90 text-white w-full font-inter shadow-lg text-sm sm:text-base py-2 sm:py-3"
-              >
-                {isSubmitting ? 'Sending Message...' : 'Send Message'}
-              </FadeInButton>
-              
-              <p className="font-inter text-xs sm:text-sm text-gray-600 text-center">
-                We'll respond to your message within 24 hours during business days.
-              </p>
-            </form>
-          </CardContent>
-        </Card>
-      </ScrollReveal>
+      <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mx-2 sm:mx-0">
+        <ContactFormHeader />
+        <CardContent className="p-4 sm:p-6">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <ContactFormFields
+              formData={formData}
+              onFieldChange={handleInputChange}
+            />
+
+            <FadeInButton
+              type="submit"
+              loading={isSubmitting}
+              className="bg-medical-deep-blue hover:bg-medical-deep-blue/90 text-white w-full font-inter shadow-lg text-sm sm:text-base py-2 sm:py-3"
+            >
+              {isSubmitting ? 'Sending Message...' : 'Send Message'}
+            </FadeInButton>
+
+            <p className="font-inter text-xs sm:text-sm text-gray-600 text-center">
+              We'll respond to your message within 24 hours during business days.
+            </p>
+          </form>
+        </CardContent>
+      </Card>
     </div>
   );
 };

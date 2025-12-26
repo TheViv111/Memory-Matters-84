@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-16 h-16 rounded-full overflow-hidden shadow-xl border-2 border-white/20">
-                <img src="/logo.png" alt="Memory Matters Logo" className="w-full h-full object-cover" />
+                <img src="/logo.jpeg" alt="Memory Matters Logo" className="w-full h-full object-cover" />
               </div>
               <div>
                 <h3 className="font-playfair text-xl font-semibold">Memory Matters</h3>
@@ -115,6 +115,15 @@ const Footer = () => {
             <Link to="/terms" className="text-gray-400 hover:text-medical-teal text-sm transition-colors duration-200">
               Terms of Service
             </Link>
+            <a
+              href="https://instagram.com/memorymattersindia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-medical-teal transition-colors duration-200"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} />
+            </a>
             <span className="text-gray-400 text-sm">Confidential & Secure</span>
           </div>
         </div>

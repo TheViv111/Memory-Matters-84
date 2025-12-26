@@ -176,119 +176,31 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Accessibility & Clinic Info */}
       <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal mb-6">
-              Your Care Journey
-            </h2>
-            <p className="font-inter text-lg text-gray-600 max-w-2xl mx-auto">
-              Understanding what to expect during your care with Memory Matters
-            </p>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center px-6 py-2 bg-medical-teal/10 rounded-full mb-6">
+            <Users className="w-4 h-4 text-medical-teal mr-2" />
+            <span className="text-medical-teal font-inter text-sm font-medium">Clinic Accessibility</span>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal mb-8">
+            Accessible & Compassionate Environment
+          </h2>
+          <p className="font-inter text-lg text-gray-700 mb-10 leading-relaxed">
+            Our clinic is specifically designed to be senior-friendly, ensuring a safe and comfortable experience for patients and their families.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              {
-                step: "01",
-                title: "Initial Consultation",
-                description: "Comprehensive evaluation of your concerns and medical history"
-              },
-              {
-                step: "02",
-                title: "Diagnostic Assessment",
-                description: "Detailed testing and evaluation to understand your condition"
-              },
-              {
-                step: "03",
-                title: "Treatment Planning",
-                description: "Personalized care plan developed with your input and goals"
-              },
-              {
-                step: "04",
-                title: "Ongoing Support",
-                description: "Regular follow-ups and adjustments to ensure optimal care"
-              }
-            ].map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-medical-teal rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-lg">{step.step}</span>
-                </div>
-                <h3 className="font-playfair text-xl text-medical-charcoal mb-3">
-                  {step.title}
-                </h3>
-                <p className="font-inter text-gray-600 text-sm leading-relaxed">
-                  {step.description}
-                </p>
+              "Wheelchair accessible facilities",
+              "Close parking available",
+              "Comfortable waiting areas",
+              "Family-friendly environment"
+            ].map((item, index) => (
+              <div key={index} className="flex flex-col items-center p-6 bg-medical-beige/30 rounded-2xl border border-medical-teal/10">
+                <CheckCircle className="w-6 h-6 text-medical-teal mb-3" />
+                <span className="font-inter text-gray-700 text-sm font-medium text-center">{item}</span>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Insurance & Accessibility */}
-      <section className="py-16 bg-medical-beige">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <Card>
-              <CardContent className="p-8">
-                <Shield className="w-12 h-12 text-medical-teal mb-6" />
-                <h3 className="font-playfair text-2xl text-medical-charcoal mb-4">
-                  Insurance & Payment
-                </h3>
-                <p className="font-inter text-gray-700 mb-6">
-                  We accept most major insurance plans and offer flexible payment options
-                  to ensure care is accessible to all patients.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {[
-                    "Star Health & Allied Insurance",
-                    "HDFC ERGO Health Insurance",
-                    "ICICI Lombard",
-                    "Niva Bupa (Max Bupa)",
-                    "Care Health Insurance"
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-medical-teal" />
-                      <span className="font-inter text-gray-700 text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button variant="outline" className="border-medical-teal text-medical-teal hover:bg-medical-teal hover:text-white">
-                  Verify Your Insurance
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-8">
-                <Users className="w-12 h-12 text-medical-teal mb-6" />
-                <h3 className="font-playfair text-2xl text-medical-charcoal mb-4">
-                  Accessibility & Comfort
-                </h3>
-                <p className="font-inter text-gray-700 mb-6">
-                  Our clinic is designed with accessibility and comfort in mind,
-                  ensuring a welcoming environment for all patients and families.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {[
-                    "Wheelchair accessible facilities",
-                    "Close parking available",
-                    "Comfortable waiting areas",
-                    "Family-friendly environment"
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-medical-teal" />
-                      <span className="font-inter text-gray-700 text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button variant="outline" className="border-medical-teal text-medical-teal hover:bg-medical-teal hover:text-white">
-                  Virtual Tour
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>

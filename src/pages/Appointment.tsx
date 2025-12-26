@@ -6,7 +6,6 @@ import { format } from 'date-fns';
 import { Phone, Video, Clock, MapPin, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import ScrollReveal from '@/components/animations/ScrollReveal';
 import FadeInButton from '@/components/animations/FadeInButton';
 import AppointmentHero from '@/components/appointment/AppointmentHero';
 import AppointmentTypes from '@/components/appointment/AppointmentTypes';
@@ -197,20 +196,18 @@ const Appointment = () => {
                   handleInputChange={handleInputChange}
                 />
 
-                <ScrollReveal direction="up" delay={0.6}>
-                  <div className="text-center pt-6">
-                    <FadeInButton
-                      type="submit"
-                      loading={isSubmitting}
-                      className="bg-gradient-to-r from-medical-deep-blue to-medical-teal hover:from-medical-teal hover:to-medical-deep-blue text-white px-12 py-4 text-lg font-inter shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 rounded-xl border-2 border-white/50 backdrop-blur-sm"
-                    >
-                      {isSubmitting ? 'Submitting Request...' : 'Request Appointment'}
-                    </FadeInButton>
-                    <p className="font-inter text-sm text-gray-600 mt-4">
-                      We'll contact you within 24 hours to confirm your appointment
-                    </p>
-                  </div>
-                </ScrollReveal>
+                <div className="text-center pt-6">
+                  <FadeInButton
+                    type="submit"
+                    loading={isSubmitting}
+                    className="bg-gradient-to-r from-medical-deep-blue to-medical-teal hover:from-medical-teal hover:to-medical-deep-blue text-white px-12 py-4 text-lg font-inter shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 rounded-xl border-2 border-white/50 backdrop-blur-sm"
+                  >
+                    {isSubmitting ? 'Submitting Request...' : 'Request Appointment'}
+                  </FadeInButton>
+                  <p className="font-inter text-sm text-gray-600 mt-4">
+                    We'll contact you within 24 hours to confirm your appointment
+                  </p>
+                </div>
               </form>
             </div>
           </section>
@@ -223,14 +220,12 @@ const Appointment = () => {
         <div className="absolute top-0 right-0 w-72 h-72 bg-medical-deep-blue/10 rounded-full blur-3xl animate-pulse" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <ScrollReveal direction="up" delay={0.1}>
-            <h2 className="font-playfair text-3xl text-medical-charcoal mb-8">
-              Need Help Scheduling?
-            </h2>
-            <p className="font-inter text-gray-600 mb-8 max-w-2xl mx-auto">
-              Our friendly staff is here to help you with any questions about scheduling or preparing for your visit
-            </p>
-          </ScrollReveal>
+          <h2 className="font-playfair text-3xl text-medical-charcoal mb-8">
+            Need Help Scheduling?
+          </h2>
+          <p className="font-inter text-gray-600 mb-8 max-w-2xl mx-auto">
+            Our friendly staff is here to help you with any questions about scheduling or preparing for your visit
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
@@ -256,28 +251,26 @@ const Appointment = () => {
                 action: "Get Directions"
               },
             ].map((item, index) => (
-              <ScrollReveal key={index} direction="up" delay={0.2 + index * 0.1}>
-                <Card className="hover:shadow-2xl transition-all duration-500 hover:scale-110 bg-white/90 backdrop-blur-md border-0 shadow-xl group">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-medical-teal to-medical-deep-blue rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl group-hover:scale-110 transition-all duration-300">
-                      <item.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="font-playfair text-lg font-semibold text-medical-charcoal mb-2 group-hover:text-medical-deep-blue transition-colors duration-300">{item.title}</h3>
-                    <p className="font-inter text-medical-deep-blue font-medium mb-1">{item.content}</p>
-                    <p className="font-inter text-sm text-gray-600 mb-3">{item.subtitle}</p>
-                    <button className="font-inter text-sm text-medical-teal hover:text-medical-deep-blue transition-colors duration-200 font-medium bg-gradient-to-r from-medical-teal/10 to-medical-orange/10 px-4 py-2 rounded-lg hover:from-medical-teal/20 hover:to-medical-orange/20">
-                      {item.action}
-                    </button>
-                  </CardContent>
-                </Card>
-              </ScrollReveal>
+              <Card key={index} className="hover:shadow-2xl transition-all duration-500 hover:scale-110 bg-white/90 backdrop-blur-md border-0 shadow-xl group">
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-medical-teal to-medical-deep-blue rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl group-hover:scale-110 transition-all duration-300">
+                    <item.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="font-playfair text-lg font-semibold text-medical-charcoal mb-2 group-hover:text-medical-deep-blue transition-colors duration-300">{item.title}</h3>
+                  <p className="font-inter text-medical-deep-blue font-medium mb-1">{item.content}</p>
+                  <p className="font-inter text-sm text-gray-600 mb-3">{item.subtitle}</p>
+                  <button className="font-inter text-sm text-medical-teal hover:text-medical-deep-blue transition-colors duration-200 font-medium bg-gradient-to-r from-medical-teal/10 to-medical-orange/10 px-4 py-2 rounded-lg hover:from-medical-teal/20 hover:to-medical-orange/20">
+                    {item.action}
+                  </button>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       <Footer />
-    </div>
+    </div >
   );
 };
 

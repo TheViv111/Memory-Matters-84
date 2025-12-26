@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Phone, Brain } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +41,7 @@ const Navigation = () => {
           {/* Simplified Logo */}
           <Link to="/" className="flex items-center space-x-3 hover:scale-105 transition-transform duration-200 group" onClick={handleLinkClick}>
             <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
-              <img src="/logo.png" alt="Memory Matters Logo" className="w-full h-full object-cover" />
+              <img src="/logo.jpeg" alt="Memory Matters Logo" className="w-full h-full object-cover" />
             </div>
             <div className="font-playfair text-xl font-bold text-medical-charcoal">
               Memory Matters
@@ -80,9 +80,9 @@ const Navigation = () => {
             </Link>
 
             {/* Contact */}
-            <a href="tel:+918904418172" className="flex items-center space-x-2 px-3 py-2 text-medical-deep-blue hover:text-medical-orange transition-colors">
+            <a href="tel:+918904418172" className="flex items-center space-x-2 px-3 py-2 text-medical-deep-blue hover:text-medical-orange transition-colors shrink-0">
               <Phone className="w-4 h-4" />
-              <span className="font-inter text-sm font-medium">+91 89044 18172</span>
+              <span className="font-inter text-sm font-medium whitespace-nowrap">+91 89044 18172</span>
             </a>
           </div>
 
