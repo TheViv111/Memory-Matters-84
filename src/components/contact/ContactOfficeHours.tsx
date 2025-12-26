@@ -29,9 +29,6 @@ const ContactOfficeHours = () => {
             </div>
           ))}
           <div className="pt-4 border-t border-gray-200">
-            <p className="font-inter text-sm text-medical-deep-blue font-medium">
-              Emergency calls accepted 24/7 for existing patients
-            </p>
           </div>
         </div>
       </CardContent>

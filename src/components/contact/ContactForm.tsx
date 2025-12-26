@@ -47,7 +47,7 @@ const ContactForm = () => {
 
       toast({
         title: "Message Sent Successfully! ✨",
-        description: "Thank you for contacting us. We'll respond within 24 hours.",
+        description: "Thank you for contacting us. We'll respond at the earliest.",
       });
 
       // Reset form
@@ -92,7 +92,7 @@ const ContactForm = () => {
             </FadeInButton>
 
             <p className="font-inter text-xs sm:text-sm text-gray-600 text-center">
-              We'll respond to your message within 24 hours during business days.
+              We'll respond to your message at the earliest.
             </p>
           </form>
         </CardContent>

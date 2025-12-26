@@ -9,7 +9,7 @@ const ContactFormHeader = () => {
         Send Us a Message
       </CardTitle>
       <p className="text-gray-600 font-inter text-sm sm:text-base">
-        We'd love to hear from you. Send us a message and we'll respond within 24 hours.
+        We'd love to hear from you. Send us a message and we'll respond at the earliest.
       </p>
     </CardHeader>
   );

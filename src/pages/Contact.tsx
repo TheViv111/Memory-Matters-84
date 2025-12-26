@@ -9,7 +9,6 @@ import ContactOfficeHours from '@/components/contact/ContactOfficeHours';
 import ContactLocationInfo from '@/components/contact/ContactLocationInfo';
 import ContactHelpSection from '@/components/contact/ContactHelpSection';
 import ContactMapSection from '@/components/contact/ContactMapSection';
-import ContactPrivacyNotice from '@/components/contact/ContactPrivacyNotice';
 
 const Contact = () => {
   return (
@@ -38,7 +37,6 @@ const Contact = () => {
 
       <ContactMapSection />
       <ContactHelpSection />
-      <ContactPrivacyNotice />
       <Footer />
     </div>
   );

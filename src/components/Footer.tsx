@@ -39,6 +39,15 @@ const Footer = () => {
                 <Mail size={18} className="text-medical-teal" />
                 <span>memorymattersindia@gmail.com</span>
               </a>
+              <a
+                href="https://instagram.com/memorymattersindia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 hover:text-medical-teal transition-colors duration-200"
+              >
+                <Instagram size={18} className="text-medical-teal" />
+                <span>@memorymattersindia</span>
+              </a>
               <div className="flex items-start space-x-3 hover:text-medical-teal transition-colors duration-200">
                 <MapPin size={18} className="text-medical-teal mt-1 flex-shrink-0" />
                 <div>
@@ -54,6 +63,9 @@ const Footer = () => {
           <div>
             <h4 className="font-playfair text-lg font-semibold mb-4">Quick Links</h4>
             <div className="space-y-2">
+              <Link to="/" className="block text-gray-300 hover:text-medical-teal transition-colors duration-200 hover:translate-x-1">
+                Home
+              </Link>
               <Link to="/about" className="block text-gray-300 hover:text-medical-teal transition-colors duration-200 hover:translate-x-1">
                 About Dr. Hegde
               </Link>
@@ -96,28 +108,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-600 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-600 mt-8 pt-8 text-center sm:text-left">
           <p className="text-gray-400 text-sm">
             © 2024 Memory Matters Clinic. All rights reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="text-gray-400 hover:text-medical-teal text-sm transition-colors duration-200">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="text-gray-400 hover:text-medical-teal text-sm transition-colors duration-200">
-              Terms of Service
-            </Link>
-            <a
-              href="https://instagram.com/memorymattersindia"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-medical-teal transition-colors duration-200"
-              aria-label="Instagram"
-            >
-              <Instagram size={20} />
-            </a>
-            <span className="text-gray-400 text-sm">Confidential & Secure</span>
-          </div>
         </div>
       </div>
     </footer>

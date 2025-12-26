@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Phone, Video, Clock } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ContactHelpSection = () => {
@@ -18,7 +18,7 @@ const ContactHelpSection = () => {
           Our friendly staff is here to help you with any questions about scheduling or preparing for your visit
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
           {[
             {
               icon: Phone,
@@ -29,20 +29,12 @@ const ContactHelpSection = () => {
               path: "tel:+918904418172"
             },
             {
-              icon: Video,
-              title: "Video Consult",
-              content: "Available for follow-ups",
-              subtitle: "Same day available",
-              action: "Learn More",
-              path: "/services"
-            },
-            {
-              icon: Clock,
-              title: "Emergency",
-              content: "24/7 Support",
-              subtitle: "For existing patients",
-              action: "Emergency Line",
-              path: "tel:+918904418172"
+              icon: Mail,
+              title: "Email Us",
+              content: "memorymattersindia@gmail.com",
+              subtitle: "Respond at earliest",
+              action: "Send Email",
+              path: "mailto:memorymattersindia@gmail.com"
             }
           ].map((item, index) => (
             <Card key={index} className="hover:shadow-2xl transition-all duration-500 hover:scale-110 bg-white/90 backdrop-blur-md border-0 shadow-xl group">

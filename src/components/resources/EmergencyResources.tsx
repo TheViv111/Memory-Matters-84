@@ -19,11 +19,6 @@ const EmergencyResources = () => {
       title: "Alzheimer's Association",
       number: "1-800-272-3900",
       description: "24/7 helpline for families and caregivers",
-    },
-    {
-      title: "Dr. Hegde Emergency Line",
-      number: "+91 89044 18172",
-      description: "For urgent medical concerns related to memory care",
     }
   ];
 
@@ -50,7 +45,7 @@ const EmergencyResources = () => {
                   </h3>
                 </div>
                 <div className="mb-3">
-                  <a 
+                  <a
                     href={`tel:${contact.number}`}
                     className="text-2xl font-bold text-medical-deep-blue hover:text-medical-orange transition-colors"
                   >
@@ -71,7 +66,7 @@ const EmergencyResources = () => {
               When to Seek Emergency Care
             </h3>
             <p className="text-gray-600">
-              Call 911 immediately if you notice sudden confusion, severe agitation, signs of stroke, 
+              Call 911 immediately if you notice sudden confusion, severe agitation, signs of stroke,
               difficulty breathing, chest pain, or any other life-threatening symptoms.
             </p>
           </div>

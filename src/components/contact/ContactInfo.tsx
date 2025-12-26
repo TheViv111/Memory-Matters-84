@@ -25,20 +25,13 @@ const ContactInfo = () => {
       content: "4, Wind Tunnel Rd",
       subtitle: "Murugeshpalya, Bengaluru",
       gradient: "from-purple-500 to-purple-600"
-    },
-    {
-      icon: Shield,
-      title: "Emergency",
-      content: "+91 89044 18172",
-      subtitle: "24/7 for Existing Patients",
-      gradient: "from-red-500 to-red-600"
     }
   ];
 
   return (
     <section className="py-16 bg-gradient-to-br from-medical-beige to-medical-teal/10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {contactItems.map((item, index) => (
             <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white/80 backdrop-blur-sm border-0 group">
               <CardContent className="p-6">
@@ -51,7 +44,9 @@ const ContactInfo = () => {
                 <h3 className="font-playfair text-lg font-semibold text-medical-charcoal mb-2 group-hover:text-medical-teal transition-colors duration-200">
                   {item.title}
                 </h3>
-                <p className="font-inter text-medical-deep-blue font-semibold break-all">{item.content}</p>
+                <p className="font-inter text-medical-deep-blue font-semibold whitespace-nowrap text-xs sm:text-sm lg:text-base" title={item.content}>
+                  {item.content}
+                </p>
                 <p className="font-inter text-sm text-gray-600 mt-1">{item.subtitle}</p>
               </CardContent>
             </Card>
