@@ -74,7 +74,6 @@ const ContactFormFields = ({ formData, onFieldChange }: ContactFormFieldsProps) 
             <SelectValue placeholder="Select a subject" />
           </SelectTrigger>
           <SelectContent className="bg-white border-2 border-medical-teal/20 shadow-xl z-50">
-            <SelectItem value="appointment">Schedule Appointment</SelectItem>
             <SelectItem value="records">Medical Records</SelectItem>
             <SelectItem value="services">Services Information</SelectItem>
             <SelectItem value="other">Other</SelectItem>

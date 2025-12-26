@@ -32,7 +32,7 @@ const FAQs = () => {
     {
       id: "01",
       question: "What is the length and frequency of our sessions?",
-      answer: "Each session will be 50 minutes to an hour. We typically schedule our appointments once a week or every two weeks."
+      answer: "Each session will be 50 minutes to an hour. We typically schedule sessions once a week or every two weeks."
     },
     {
       id: "02",
@@ -87,7 +87,7 @@ const FAQs = () => {
           </h1>
           <div className="w-20 h-1 bg-gradient-to-r from-medical-teal to-medical-orange mx-auto mb-8 rounded-full shadow-md"></div>
           <p className="font-inter text-xl text-gray-600 max-w-2xl mx-auto">
-            Find answers to common questions about our services, appointments, and treatment approach.
+            Find answers to common questions about our services, care approach, and treatment options.
           </p>
         </div>
       </section>

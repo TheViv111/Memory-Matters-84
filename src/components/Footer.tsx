@@ -60,9 +60,6 @@ const Footer = () => {
               <Link to="/services" className="block text-gray-300 hover:text-medical-teal transition-colors duration-200 hover:translate-x-1">
                 Our Services
               </Link>
-              <Link to="/appointment" className="block text-gray-300 hover:text-medical-teal transition-colors duration-200 hover:translate-x-1">
-                Book Appointment
-              </Link>
               <Link to="/resources" className="block text-gray-300 hover:text-medical-teal transition-colors duration-200 hover:translate-x-1">
                 Patient Resources
               </Link>
@@ -85,9 +82,6 @@ const Footer = () => {
                 <span className="text-sm">Saturday: 9:00 AM - 1:00 PM</span>
               </div>
               <div className="pl-6 text-sm">Sunday: Closed</div>
-              <div className="pt-2 text-sm text-medical-teal font-medium border-t border-gray-600 mt-3">
-                Prior appointment required
-              </div>
             </div>
 
             {/* Quick Actions */}
@@ -98,12 +92,6 @@ const Footer = () => {
               >
                 Call Now
               </a>
-              <Link
-                to="/appointment"
-                className="block bg-medical-deep-blue hover:bg-medical-deep-blue/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 text-center"
-              >
-                Book Online
-              </Link>
             </div>
           </div>
         </div>

@@ -71,12 +71,6 @@ const Navigation = () => {
               </Link>
             ))}
 
-            {/* Simplified CTA Button */}
-            <Link to="/appointment" onClick={handleLinkClick}>
-              <Button className="bg-gradient-to-r from-medical-deep-blue to-medical-teal hover:from-medical-teal hover:to-medical-deep-blue text-white px-6 py-2 text-sm font-inter shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 rounded-lg">
-                Book Appointment
-              </Button>
-            </Link>
 
             {/* Contact */}
             <a href="tel:+918904418172" className="flex items-center space-x-2 px-3 py-2 text-medical-deep-blue hover:text-medical-orange transition-colors shrink-0">
@@ -123,11 +117,6 @@ const Navigation = () => {
               ))}
 
               <div className="pt-3 border-t border-gray-200 space-y-3">
-                <Link to="/appointment" onClick={handleLinkClick}>
-                  <Button className="w-full bg-gradient-to-r from-medical-deep-blue to-medical-teal hover:from-medical-teal hover:to-medical-deep-blue text-white font-inter rounded-lg shadow-lg">
-                    Book Appointment
-                  </Button>
-                </Link>
 
                 <a href="tel:+918904418172" className="flex items-center justify-center space-x-2 px-4 py-3 text-medical-deep-blue">
                   <Phone className="w-4 h-4" />

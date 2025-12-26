@@ -116,11 +116,6 @@ const Services = () => {
             Our full range of neurological and memory care services are designed to provide
             compassionate, personalized care for patients and families at every stage of their journey.
           </p>
-          <Link to="/appointment">
-            <Button className="bg-medical-deep-blue hover:bg-medical-deep-blue/90 text-white px-8 py-3 text-lg font-inter">
-              Schedule Consultation
-            </Button>
-          </Link>
         </div>
       </section>
 
