@@ -25,10 +25,13 @@ const PatientTestimonials = () => {
 
   const testimonials = [
     {
-      content: "Good morning Dear Dr Soumya\nWanted to share with you the news that I have found a job\nYou deserve all the credit dear, in making me confident and introducing me to various options available \nCan't thank you enough🙏🏻\nGood day"
+      content: "Good morning Dr. Soumya,\n\nWanted to share with you the news that I have found a job. You deserve all the credit in making me confident and introducing me to various options available.\n\nCan't thank you enough 🙏🏻\nGood day."
     },
     {
-      content: "Excellent doctor. Very patient and gentle. Takes detailed history. Conservative in approach, patient-centric, and also provides a lot of education and advice to caregivers and family members. Truly a gem! Mon-Fri 9 to 4, Sat 9 to 1 at the clinic."
+      content: "Excellent doctor. Very patient and gentle. Takes detailed history. Conservative in approach, patient-centric, and also provides a lot of education and advice to caregivers and family members.\n\nTruly a gem!\n\nMon-Fri: 9 AM to 4 PM\nSat: 9 AM to 1 PM"
+    },
+    {
+      content: "I knew this smile will blossom, just didn't know well. Thanks to the Supreme, thanks to you, thanks to life 🙏🏻, she smiles better than ever before 🤗"
     }
   ];
 
@@ -52,14 +55,14 @@ const PatientTestimonials = () => {
         <Carousel
           setApi={setApi}
           opts={{
-            align: "center",
+            align: "start",
             loop: true,
           }}
-          className="w-full max-w-4xl mx-auto"
+          className="w-full max-w-6xl mx-auto"
         >
           <CarouselContent className="-ml-4">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="pl-4 md:basis-1/2">
+              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                 <Card className="h-full border-l-4 border-medical-teal shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
                   <CardContent className="p-8 h-full flex flex-col items-center text-center justify-center">
                     <Quote className="w-10 h-10 text-medical-teal/20 mb-6" />
