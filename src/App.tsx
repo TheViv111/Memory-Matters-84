@@ -10,7 +10,6 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
-import FAQs from "./pages/FAQs";
 import NotFound from "./pages/NotFound";
 import LoadingPage from "./components/LoadingPage";
 
@@ -42,7 +41,6 @@ const App = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/faqs" element={<FAQs />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

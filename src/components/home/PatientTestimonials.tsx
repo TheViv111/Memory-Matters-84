@@ -25,7 +25,7 @@ const PatientTestimonials = () => {
 
   const testimonials = [
     {
-      content: "Good morning Dear Dr Soumya\nWanted to share with you the news that am.joining Nightingale medical trust in Dec\nYou deserve all the credit dear, in making me confident and introducing me to various options available \nCan't thank you enough🙏🏻\nGood day"
+      content: "Good morning Dear Dr Soumya\nWanted to share with you the news that I have found a job\nYou deserve all the credit dear, in making me confident and introducing me to various options available \nCan't thank you enough🙏🏻\nGood day"
     },
     {
       content: "Excellent doctor. Very patient and gentle. Takes detailed history. Conservative in approach, patient-centric, and also provides a lot of education and advice to caregivers and family members. Truly a gem! Mon-Fri 9 to 4, Sat 9 to 1 at the clinic."
