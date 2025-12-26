@@ -34,7 +34,7 @@ const PhilosophySection = () => {
       <div className="absolute top-0 right-0 w-80 h-80 bg-medical-deep-blue/5 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-medical-orange/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
       <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-medical-teal/3 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
-      
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <ScrollReveal direction="up" delay={0.1}>
           <div className="text-center mb-12">
@@ -45,10 +45,10 @@ const PhilosophySection = () => {
             <ScrollReveal direction="fade" delay={0.3}>
               <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-medical-teal/20 max-w-4xl mx-auto hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
                 <p className="font-inter text-xl text-gray-600 leading-relaxed mb-6 italic">
-                  "I believe that treating neurological conditions requires not just medical expertise, 
-                  but also deep compassion and understanding. Every patient's journey is unique, and 
-                  I'm committed to providing personalized care that addresses both the medical and 
-                  emotional aspects of their condition."
+                  "I believe that treating mental and cognitive health challenges in older adults requires
+                  not just medical expertise, but also deep compassion and understanding. Every patient's
+                  journey is unique, and I'm committed to providing personalized care that addresses both
+                  the clinical and emotional aspects of their wellbeing."
                 </p>
                 <div className="flex items-center justify-center">
                   <div className="w-12 h-0.5 bg-gradient-to-r from-medical-teal to-medical-orange mr-4"></div>

@@ -15,7 +15,7 @@ const PatientTestimonials = () => {
       treatment: "Memory Assessment"
     },
     {
-      name: "Margaret Thompson",
+      name: "Sujata Rao",
       relation: "Daughter of Patient",
       content: "Dr. Hegde's compassionate approach made such a difficult time more manageable. She took time to explain everything and helped us understand Dad's condition with patience and clarity. The follow-up care has been exceptional.",
       rating: 5,
@@ -23,7 +23,7 @@ const PatientTestimonials = () => {
       treatment: "Dementia Care"
     },
     {
-      name: "Robert Chen",
+      name: "Arvind K.",
       relation: "Patient",
       content: "The memory assessment was thorough yet comfortable. Dr. Hegde and her team made me feel heard and respected throughout the entire process. The treatment plan was clearly explained and very effective.",
       rating: 5,
@@ -39,7 +39,7 @@ const PatientTestimonials = () => {
       treatment: "Mood Disorders"
     },
     {
-      name: "Dr. James Wilson",
+      name: "Dr. Sandeep Reddy",
       relation: "Referring Physician",
       content: "I regularly refer my elderly patients to Dr. Hegde. Her expertise in geriatric psychiatry is unmatched, and the feedback from patients and families is consistently outstanding. Highly professional.",
       rating: 5,
@@ -100,9 +100,8 @@ const PatientTestimonials = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <ScrollReveal key={index} direction="up" delay={0.1 + index * 0.1}>
-              <Card className={`h-full border-l-4 border-medical-teal hover:shadow-2xl transition-all duration-300 hover:scale-105 ${
-                index === 0 ? 'bg-gradient-to-br from-medical-teal/5 to-medical-deep-blue/5 ring-2 ring-medical-teal/20 shadow-xl' : 'bg-white shadow-lg'
-              }`}>
+              <Card className={`h-full border-l-4 border-medical-teal hover:shadow-2xl transition-all duration-300 hover:scale-105 ${index === 0 ? 'bg-gradient-to-br from-medical-teal/5 to-medical-deep-blue/5 ring-2 ring-medical-teal/20 shadow-xl' : 'bg-white shadow-lg'
+                }`}>
                 <CardContent className="p-6 h-full flex flex-col">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex">
@@ -117,13 +116,13 @@ const PatientTestimonials = () => {
                       </div>
                     )}
                   </div>
-                  
+
                   <Quote className="w-8 h-8 text-medical-teal/30 mb-4" />
-                  
+
                   <p className="font-inter text-gray-700 mb-6 italic leading-relaxed flex-grow">
                     "{testimonial.content}"
                   </p>
-                  
+
                   <div className="border-t pt-4">
                     <p className="font-semibold text-medical-charcoal">{testimonial.name}</p>
                     <p className="text-sm text-gray-600 mb-2">{testimonial.relation}</p>

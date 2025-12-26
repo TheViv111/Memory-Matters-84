@@ -8,27 +8,27 @@ const ProfessionalCredentials = () => {
   const certifications = [
     {
       icon: <Award className="w-8 h-8 text-medical-teal" />,
-      title: "Board Certified",
-      subtitle: "American Board of Psychiatry & Neurology",
-      year: "2008"
+      title: "Postgraduate Training",
+      subtitle: "DPM (Psychiatry) - LTM Medical College, Mumbai",
+      year: "2001"
     },
     {
       icon: <GraduationCap className="w-8 h-8 text-medical-deep-blue" />,
-      title: "Fellowship Training",
-      subtitle: "Geriatric Psychiatry - Johns Hopkins",
-      year: "2009"
+      title: "Specialist Training",
+      subtitle: "MRCPsych & CCT in Old Age Psychiatry - UK",
+      year: "2010"
     },
     {
       icon: <BookOpen className="w-8 h-8 text-medical-orange" />,
-      title: "Research Publications",
-      subtitle: "25+ Peer-Reviewed Articles",
-      year: "2024"
+      title: "Advanced Education",
+      subtitle: "MMedSci (Clinical Psychiatry) - UK",
+      year: "2012"
     },
     {
       icon: <Users className="w-8 h-8 text-medical-teal" />,
-      title: "Professional Memberships",
-      subtitle: "American Geriatrics Society",
-      year: "Active"
+      title: "Clinical Experience",
+      subtitle: "20+ Years in Geriatric Psychiatry",
+      year: "Current"
     }
   ];
 
@@ -95,36 +95,6 @@ const ProfessionalCredentials = () => {
           </div>
         </ScrollReveal>
 
-        {/* Awards & Recognition */}
-        <ScrollReveal direction="up" delay={0.3}>
-          <div className="bg-gradient-to-br from-white to-medical-beige/20 rounded-3xl p-8 shadow-xl">
-            <div className="text-center mb-12">
-              <h3 className="font-playfair text-3xl text-medical-charcoal mb-4">
-                Awards & Recognition
-              </h3>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-medical-teal to-medical-orange mx-auto"></div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {achievements.map((achievement, index) => (
-                <div key={index} className="text-center group">
-                  <div className="mb-4 p-3 bg-white rounded-full w-fit mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
-                    {achievement.icon}
-                  </div>
-                  <h4 className="font-playfair text-lg font-semibold text-medical-charcoal mb-2">
-                    {achievement.title}
-                  </h4>
-                  <p className="font-inter text-sm text-gray-600 mb-1">
-                    {achievement.organization}
-                  </p>
-                  <span className="font-inter text-xs text-medical-teal font-medium">
-                    {achievement.year}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );

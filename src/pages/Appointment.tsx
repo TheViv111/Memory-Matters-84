@@ -3,7 +3,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { format } from 'date-fns';
-import { Phone, Video, Clock } from 'lucide-react';
+import { Phone, Video, Clock, MapPin, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import ScrollReveal from '@/components/animations/ScrollReveal';
@@ -29,7 +29,6 @@ const Appointment = () => {
     phone: '',
     dateOfBirth: '',
     reason: '',
-    insurance: '',
     previousPatient: '',
     medications: '',
     emergencyContact: '',
@@ -42,7 +41,7 @@ const Appointment = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!selectedDate || !selectedTime || !appointmentType) {
       toast({
         title: "Incomplete Information",
@@ -81,7 +80,7 @@ const Appointment = () => {
         title: "Appointment Requested Successfully! ✨",
         description: "Thank you! We'll confirm your appointment within 24 hours and send you a confirmation email.",
       });
-      
+
       // Reset form
       setFormData({
         firstName: '',
@@ -90,7 +89,6 @@ const Appointment = () => {
         phone: '',
         dateOfBirth: '',
         reason: '',
-        insurance: '',
         previousPatient: '',
         medications: '',
         emergencyContact: '',
@@ -116,12 +114,12 @@ const Appointment = () => {
     <div className="min-h-screen bg-gradient-to-br from-medical-beige via-white to-medical-teal/5 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-medical-teal/3 to-medical-orange/3 pointer-events-none" />
-      
+
       <Navigation />
-      
+
       <AppointmentHero />
-      
-      <AppointmentTypes 
+
+      <AppointmentTypes
         appointmentType={appointmentType}
         setAppointmentType={setAppointmentType}
       />
@@ -132,21 +130,19 @@ const Appointment = () => {
           <div className="flex justify-center space-x-4">
             <button
               onClick={() => setUseAdvancedBooking(false)}
-              className={`px-6 py-3 rounded-lg font-inter transition-all duration-300 ${
-                !useAdvancedBooking
-                  ? 'bg-medical-teal text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
+              className={`px-6 py-3 rounded-lg font-inter transition-all duration-300 ${!useAdvancedBooking
+                ? 'bg-medical-teal text-white shadow-lg'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
             >
               Standard Booking
             </button>
             <button
               onClick={() => setUseAdvancedBooking(true)}
-              className={`px-6 py-3 rounded-lg font-inter transition-all duration-300 ${
-                useAdvancedBooking
-                  ? 'bg-medical-teal text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
+              className={`px-6 py-3 rounded-lg font-inter transition-all duration-300 ${useAdvancedBooking
+                ? 'bg-medical-teal text-white shadow-lg'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
             >
               Advanced Booking System
             </button>
@@ -163,7 +159,7 @@ const Appointment = () => {
           <section className="py-16 bg-white/80 backdrop-blur-sm relative overflow-hidden">
             <div className="absolute top-0 left-0 w-96 h-96 bg-medical-teal/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 right-0 w-80 h-80 bg-medical-orange/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-            
+
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
               <form onSubmit={handleSubmit} className="space-y-8">
                 <BookingForm
@@ -174,24 +170,37 @@ const Appointment = () => {
                 />
 
                 <PersonalInfoForm
-                  formData={formData}
+                  formData={{
+                    firstName: formData.firstName,
+                    lastName: formData.lastName,
+                    email: formData.email,
+                    phone: formData.phone,
+                    dateOfBirth: formData.dateOfBirth,
+                    previousPatient: formData.previousPatient
+                  }}
                   handleInputChange={handleInputChange}
                 />
 
                 <MedicalInfoForm
-                  formData={formData}
+                  formData={{
+                    reason: formData.reason,
+                    medications: formData.medications
+                  }}
                   handleInputChange={handleInputChange}
                 />
 
                 <EmergencyContactForm
-                  formData={formData}
+                  formData={{
+                    emergencyContact: formData.emergencyContact,
+                    emergencyPhone: formData.emergencyPhone
+                  }}
                   handleInputChange={handleInputChange}
                 />
 
                 <ScrollReveal direction="up" delay={0.6}>
                   <div className="text-center pt-6">
-                    <FadeInButton 
-                      type="submit" 
+                    <FadeInButton
+                      type="submit"
                       loading={isSubmitting}
                       className="bg-gradient-to-r from-medical-deep-blue to-medical-teal hover:from-medical-teal hover:to-medical-deep-blue text-white px-12 py-4 text-lg font-inter shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 rounded-xl border-2 border-white/50 backdrop-blur-sm"
                     >
@@ -212,7 +221,7 @@ const Appointment = () => {
       <section className="py-16 bg-gradient-to-br from-medical-beige to-medical-teal/10 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-medical-teal/5 to-medical-orange/5" />
         <div className="absolute top-0 right-0 w-72 h-72 bg-medical-deep-blue/10 rounded-full blur-3xl animate-pulse" />
-        
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <ScrollReveal direction="up" delay={0.1}>
             <h2 className="font-playfair text-3xl text-medical-charcoal mb-8">
@@ -222,30 +231,30 @@ const Appointment = () => {
               Our friendly staff is here to help you with any questions about scheduling or preparing for your visit
             </p>
           </ScrollReveal>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { 
-                icon: Phone, 
-                title: "Call Us", 
-                content: "89044 18172", 
-                subtitle: "Mon-Fri: 8AM-5PM", 
-                action: "Call Now" 
+              {
+                icon: Phone,
+                title: "Call Us",
+                content: "+91 89044 18172",
+                subtitle: "Mon-Sat: 9AM-4PM",
+                action: "Call Now"
               },
-              { 
-                icon: Video, 
-                title: "Video Consult", 
-                content: "Available for follow-ups", 
-                subtitle: "Same day available", 
-                action: "Learn More" 
+              {
+                icon: Mail,
+                title: "Email Us",
+                content: "memorymattersindia@gmail.com",
+                subtitle: "Response within 24h",
+                action: "Send Email"
               },
-              { 
-                icon: Clock, 
-                title: "Emergency", 
-                content: "24/7 Support", 
-                subtitle: "For existing patients", 
-                action: "Emergency Line" 
-              }
+              {
+                icon: MapPin,
+                title: "Visit Us",
+                content: "Kaveri Nagar",
+                subtitle: "Murgesh Pallya, B'luru",
+                action: "Get Directions"
+              },
             ].map((item, index) => (
               <ScrollReveal key={index} direction="up" delay={0.2 + index * 0.1}>
                 <Card className="hover:shadow-2xl transition-all duration-500 hover:scale-110 bg-white/90 backdrop-blur-md border-0 shadow-xl group">

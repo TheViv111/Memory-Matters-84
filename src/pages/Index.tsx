@@ -15,7 +15,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      
+
       {/* Hero Section */}
       <HeroSection />
 
@@ -31,32 +31,32 @@ const Index = () => {
               Evidence-based psychiatric care tailored for older adults
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[{
               icon: <Heart className="w-8 h-8 text-medical-teal" />,
-              title: "Memory Assessments",
-              description: "Comprehensive cognitive evaluations and early detection of memory disorders."
+              title: "Memory Screening",
+              description: "Early detection and monitoring of memory-related concerns using standardized clinical tools."
             }, {
               icon: <Users className="w-8 h-8 text-medical-teal" />,
-              title: "Dementia Care",
-              description: "Specialized treatment plans for dementia patients and family support."
+              title: "Dementia Evaluation",
+              description: "Comprehensive assessment using clinical expertise to diagnose and type different forms of dementia."
             }, {
               icon: <Shield className="w-8 h-8 text-medical-teal" />,
-              title: "Mood Disorders",
-              description: "Expert treatment for depression and anxiety in older adults."
+              title: "Behavioral Management",
+              description: "Specialized strategies for managing challenging behaviors associated with cognitive decline."
             }, {
               icon: <Calendar className="w-8 h-8 text-medical-teal" />,
-              title: "Psychiatric Consultation",
-              description: "Comprehensive evaluations and medication management."
+              title: "Geriatric Psychiatry",
+              description: "Expert treatment of psychiatric disorders specifically tailored for the senior population."
             }, {
               icon: <Heart className="w-8 h-8 text-medical-teal" />,
-              title: "Family Support",
-              description: "Guidance for families navigating mental health challenges."
+              title: "Cognitive Therapy",
+              description: "Evidence-based cognitive stimulation therapy to support and maintain brain health."
             }, {
-              icon: <Clock className="w-8 h-8 text-medical-teal" />,
-              title: "Crisis Intervention",
-              description: "Emergency psychiatric services and crisis support."
+              icon: <Users className="w-8 h-8 text-medical-teal" />,
+              title: "Family Education",
+              description: "Comprehensive support and education for families and caregivers throughout the care journey."
             }].map((service, index) => (
               <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white border-0 shadow-lg">
                 <CardContent className="p-8">
@@ -73,7 +73,7 @@ const Index = () => {
               </Card>
             ))}
           </div>
-          
+
           <div className="text-center mt-12">
             <Link to="/services">
               <Button className="bg-gradient-to-r from-medical-deep-blue to-medical-teal hover:from-medical-teal hover:to-medical-deep-blue text-white px-8 py-3 text-lg font-inter shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-xl">
@@ -97,10 +97,10 @@ const Index = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-medical-teal to-medical-orange mx-auto mb-6"></div>
             <p className="font-inter text-xl text-gray-600 max-w-3xl mx-auto">
-              Conveniently located in Murugeshpalya with easy access and parking facilities
+              Conveniently located at No.6, Wind Tunnel Road, Murgesh Pallya with easy access
             </p>
           </div>
-          
+
           <GoogleMap />
         </div>
       </section>
@@ -120,7 +120,7 @@ const Index = () => {
           <p className="font-inter text-xl mb-10 opacity-90 leading-relaxed">
             Schedule your comprehensive consultation today
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
             <Link to="/appointment">
               <Button className="bg-medical-teal hover:bg-medical-teal/90 text-white px-10 py-4 text-lg font-inter shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-xl">
@@ -133,7 +133,7 @@ const Index = () => {
               </Button>
             </Link>
           </div>
-          
+
           {/* Office Hours */}
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-md mx-auto">
             <div className="flex items-center justify-center space-x-3 mb-4">

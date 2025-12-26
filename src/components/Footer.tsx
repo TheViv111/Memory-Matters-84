@@ -11,28 +11,28 @@ const Footer = () => {
           {/* Clinic Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-medical-teal to-white rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-medical-deep-blue font-bold text-lg">M</span>
+              <div className="w-16 h-16 rounded-full overflow-hidden shadow-xl border-2 border-white/20">
+                <img src="/logo.png" alt="Memory Matters Logo" className="w-full h-full object-cover" />
               </div>
               <div>
                 <h3 className="font-playfair text-xl font-semibold">Memory Matters</h3>
-                <p className="text-sm text-gray-300">Neurology & Memory Care</p>
+                <p className="text-sm text-gray-300">Specialist Clinic for Memory & Senior Mental Health</p>
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Compassionate care for memory and neurological conditions. Dr. Soumya Hegde and our team 
+              Compassionate care for memory and neurological conditions. Dr. Soumya Hegde and our team
               provide comprehensive, patient-centered services to support you and your family on your health journey.
             </p>
-            
+
             <div className="space-y-3">
-              <a 
+              <a
                 href="tel:+918904418172"
                 className="flex items-center space-x-3 hover:text-medical-teal transition-colors duration-200"
               >
                 <Phone size={18} className="text-medical-teal" />
                 <span>+91 89044 18172</span>
               </a>
-              <a 
+              <a
                 href="mailto:memorymattersindia@gmail.com"
                 className="flex items-center space-x-3 hover:text-medical-teal transition-colors duration-200"
               >
@@ -43,7 +43,7 @@ const Footer = () => {
                 <MapPin size={18} className="text-medical-teal mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">Dr. Soumya Hegde : Memory Matters</p>
-                  <p>4, Wind Tunnel Rd, Murugeshpalya</p>
+                  <p>No.6, Wind Tunnel Road, Murugeshpalya</p>
                   <p>Kaveri Nagar, Bengaluru, Karnataka 560017</p>
                 </div>
               </div>
@@ -84,20 +84,17 @@ const Footer = () => {
               <div className="pt-2 text-sm text-medical-teal font-medium border-t border-gray-600 mt-3">
                 Prior appointment required
               </div>
-              <div className="text-sm text-medical-teal font-medium">
-                Emergency calls accepted 24/7
-              </div>
             </div>
-            
+
             {/* Quick Actions */}
             <div className="mt-4 space-y-2">
-              <a 
+              <a
                 href="tel:+918904418172"
                 className="block bg-medical-teal hover:bg-medical-teal/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 text-center"
               >
                 Call Now
               </a>
-              <Link 
+              <Link
                 to="/appointment"
                 className="block bg-medical-deep-blue hover:bg-medical-deep-blue/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 text-center"
               >
@@ -118,7 +115,7 @@ const Footer = () => {
             <Link to="/terms" className="text-gray-400 hover:text-medical-teal text-sm transition-colors duration-200">
               Terms of Service
             </Link>
-            <span className="text-gray-400 text-sm">HIPAA Compliant</span>
+            <span className="text-gray-400 text-sm">Confidential & Secure</span>
           </div>
         </div>
       </div>

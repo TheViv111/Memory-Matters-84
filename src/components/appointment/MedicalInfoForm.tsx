@@ -28,7 +28,7 @@ const MedicalInfoForm = ({ formData, handleInputChange }: MedicalInfoFormProps) 
             Help us prepare for your visit with relevant medical details
           </p>
         </CardHeader>
-        
+
         <CardContent className="p-6 space-y-6">
           <div className="space-y-2">
             <Label htmlFor="reason" className="font-inter font-medium text-medical-charcoal">
@@ -47,7 +47,7 @@ const MedicalInfoForm = ({ formData, handleInputChange }: MedicalInfoFormProps) 
               Include symptoms, duration, and any triggers or patterns you've noticed
             </p>
           </div>
-          
+
           <div className="space-y-2">
             <Label htmlFor="medications" className="font-inter font-medium text-medical-charcoal">
               Current Medications & Supplements
@@ -64,7 +64,7 @@ const MedicalInfoForm = ({ formData, handleInputChange }: MedicalInfoFormProps) 
               Include prescription medications, over-the-counter drugs, vitamins, and herbal supplements
             </p>
           </div>
-          
+
           <div className="bg-medical-teal/5 border border-medical-teal/20 rounded-lg p-4">
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-medical-teal rounded-full mt-2 flex-shrink-0"></div>
@@ -73,9 +73,8 @@ const MedicalInfoForm = ({ formData, handleInputChange }: MedicalInfoFormProps) 
                   Preparing for Your Visit
                 </h4>
                 <p className="font-inter text-xs text-gray-600 leading-relaxed">
-                  Please bring a list of your current medications, any recent test results, 
-                  and insurance information. If this is a follow-up visit, bring any symptom 
-                  diaries or notes you've been keeping.
+                  Please bring a list of your current medications and any recent test results.
+                  If this is a follow-up visit, bring any symptom diaries or notes you've been keeping.
                 </p>
               </div>
             </div>

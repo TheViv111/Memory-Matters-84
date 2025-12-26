@@ -5,117 +5,115 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { 
-  Heart, 
-  Users, 
-  Shield, 
-  Calendar, 
-  Clock, 
+import {
+  Heart,
+  Users,
+  Shield,
+  Calendar,
+  Clock,
   CheckCircle,
   Phone,
-  BookOpen
+  BookOpen,
+  MapPin,
+  Settings
 } from 'lucide-react';
 
 const Services = () => {
   const services = [
     {
       icon: <Heart className="w-12 h-12 text-medical-teal" />,
-      title: "Comprehensive Memory Assessment",
-      description: "Thorough evaluation of cognitive function, memory, and thinking skills using state-of-the-art diagnostic tools.",
-      features: [
-        "Detailed neuropsychological testing",
-        "Brain imaging coordination",
-        "Cognitive screening assessments",
-        "Family history analysis",
-        "Personalized treatment planning"
-      ],
-      duration: "2-3 hours",
-      preparation: "Bring list of medications and medical history"
+      title: "Memory Screening",
+      description: "Standardized clinical tools and standardized cognitive testing aligned with British psychiatric protocols for early detection of memory concerns.",
+      features: ["Standardized cognitive testing", "Baseline memory assessment", "Self-report evaluations", "Informant-based history", "Early detection counseling"],
+      duration: "45-60 minutes",
+      preparation: "Informant (family member) involvement is helpful"
     },
     {
       icon: <Users className="w-12 h-12 text-medical-teal" />,
-      title: "Alzheimer's & Dementia Care",
-      description: "Specialized care for various forms of dementia with focus on maintaining dignity and quality of life.",
-      features: [
-        "Early-stage intervention strategies",
-        "Medication management",
-        "Behavioral symptom treatment",
-        "Care coordination with specialists",
-        "Advanced directive planning"
-      ],
+      title: "Dementia Evaluation",
+      description: "Comprehensive clinical diagnostic process to identify and subtype different forms of dementia and cognitive impairment.",
+      features: ["Clinical diagnostic interview", "Mental state examination", "Functional assessment", "Differential diagnosis", "Care planning"],
       duration: "60-90 minutes",
-      preparation: "Caregiver presence recommended"
+      preparation: "Previous medical reports and brain imaging if any"
     },
     {
       icon: <Shield className="w-12 h-12 text-medical-teal" />,
-      title: "Geriatric Neurology",
-      description: "Expert care for age-related neurological conditions including movement disorders and stroke recovery.",
-      features: [
-        "Parkinson's disease management",
-        "Stroke rehabilitation planning",
-        "Tremor evaluation and treatment",
-        "Balance disorder assessment",
-        "Medication optimization"
-      ],
+      title: "Management of Challenging Behaviours",
+      description: "Expert strategies and therapeutic interventions for managing behavioral and psychological symptoms associated with dementia.",
+      features: ["Behavioral assessment", "Trigger identification", "Non-pharmacological strategies", "Medication management", "Safety planning"],
       duration: "60 minutes",
-      preparation: "List of current symptoms and concerns"
+      preparation: "Diary of behaviors of concern if possible"
+    },
+    {
+      icon: <CheckCircle className="w-12 h-12 text-medical-teal" />,
+      title: "Treatment of Psychiatric Disorders in Seniors",
+      description: "Specialized psychiatric care for senior-onset conditions including depression, anxiety, and late-life psychosis.",
+      features: ["Psychiatric evaluation", "Geriatric psychopharmacology", "Psychological support", "Comorbidity management", "Holistic care approach"],
+      duration: "60 minutes",
+      preparation: "List of all current medications"
     },
     {
       icon: <BookOpen className="w-12 h-12 text-medical-teal" />,
-      title: "Cognitive Therapy & Rehabilitation",
-      description: "Evidence-based therapies to support cognitive function and daily living skills.",
-      features: [
-        "Memory training exercises",
-        "Attention and focus improvement",
-        "Problem-solving skill development",
-        "Daily living skills training",
-        "Technology adaptation assistance"
-      ],
+      title: "Cognitive Stimulation Therapy",
+      description: "Evidence-based non-pharmacological treatment for people with mild to moderate dementia.",
+      features: ["Structured cognitive activities", "Social interaction support", "Brain health engagement", "Quality of life enhancement", "Group or individual sessions"],
       duration: "45-60 minutes",
-      preparation: "Comfortable clothing recommended"
+      preparation: "Regular attendance is encouraged"
+    },
+    {
+      icon: <Users className="w-12 h-12 text-medical-teal" />,
+      title: "Family Education and Support",
+      description: "In-depth guidance and emotional support for families to understand and navigate the journey of their loved ones.",
+      features: ["Disease education", "Communication strategies", "Caregiver stress management", "Legal/Financial awareness", "Future care planning"],
+      duration: "60 minutes",
+      preparation: "Relevant family members encouraged to attend"
     },
     {
       icon: <Heart className="w-12 h-12 text-medical-teal" />,
-      title: "Family Support Services",
-      description: "Comprehensive support for caregivers and family members navigating neurological conditions.",
-      features: [
-        "Caregiver education and training",
-        "Support group facilitation",
-        "Stress management counseling",
-        "Resource coordination",
-        "Crisis intervention planning"
-      ],
-      duration: "60 minutes",
-      preparation: "All family members welcome"
+      title: "Geriatric Counselling",
+      description: "Therapeutic counseling tailored to the unique emotional and psychological needs of aging adults.",
+      features: ["Adjustment to aging", "Grief and loss support", "Identity and purpose", "Emotional resilience", "Supportive psychotherapy"],
+      duration: "45-60 minutes",
+      preparation: "Open heart and mind"
     },
     {
-      icon: <Clock className="w-12 h-12 text-medical-teal" />,
-      title: "Ongoing Monitoring & Care",
-      description: "Regular follow-up care with adjustments to treatment plans as conditions evolve.",
-      features: [
-        "Progress monitoring",
-        "Medication adjustments",
-        "Symptom tracking",
-        "Quality of life assessments",
-        "Care plan modifications"
-      ],
-      duration: "30-45 minutes",
-      preparation: "Symptom diary if available"
+      icon: <MapPin className="w-12 h-12 text-medical-teal" />,
+      title: "Community Outreach Service",
+      description: "Initiatives and programs designed to increase awareness and provide care accessibility in the community.",
+      features: ["Awareness workshops", "Screening camps", "Home-based visit coordination", "Community health talks", "Stigma reduction programs"],
+      duration: "Varies",
+      preparation: "Contact us for community program schedules"
+    },
+    {
+      icon: <Users className="w-12 h-12 text-medical-teal" />,
+      title: "Caregiver Training Programs",
+      description: "Practical skills and training for caregivers to provide high-quality home-based care for seniors with cognitive needs.",
+      features: ["ADL assistance training", "Behavioral management skills", "Environmental safety", "Medication adherence", "Self-care for caregivers"],
+      duration: "60-90 minutes",
+      preparation: "Note-taking materials recommended"
+    },
+    {
+      icon: <Settings className="w-12 h-12 text-medical-teal" />,
+      title: "Senior Care Resource Hub",
+      description: "Access to a curated collection of resources, tools, and referrals for comprehensive senior mental wellness.",
+      features: ["Educational materials", "Service referrals", "Toolkits for daily living", "Support network links", "Care coordination resources"],
+      duration: "Access based",
+      preparation: "Available to all registered patients"
     }
   ];
 
   return (
     <div className="min-h-screen bg-medical-beige">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-playfair text-4xl md:text-5xl text-medical-charcoal mb-6">
-            Comprehensive Neurological Services
+            Cognitive & Geriatric Psychiatry Services
           </h1>
           <p className="font-inter text-xl text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Our full range of neurological and memory care services are designed to provide 
+            Our full range of neurological and memory care services are designed to provide
             compassionate, personalized care for patients and families at every stage of their journey.
           </p>
           <Link to="/appointment">
@@ -142,7 +140,7 @@ const Services = () => {
                   <p className="font-inter text-gray-700 mb-6 leading-relaxed">
                     {service.description}
                   </p>
-                  
+
                   <div className="mb-6">
                     <h4 className="font-inter font-semibold text-medical-charcoal mb-3">
                       What's Included:
@@ -156,7 +154,7 @@ const Services = () => {
                       ))}
                     </ul>
                   </div>
-                  
+
                   <div className="border-t pt-4 mt-6">
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-inter text-sm text-gray-600">Duration:</span>
@@ -189,7 +187,7 @@ const Services = () => {
               Understanding what to expect during your care with Memory Matters
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               {
@@ -240,15 +238,16 @@ const Services = () => {
                   Insurance & Payment
                 </h3>
                 <p className="font-inter text-gray-700 mb-6">
-                  We accept most major insurance plans and offer flexible payment options 
+                  We accept most major insurance plans and offer flexible payment options
                   to ensure care is accessible to all patients.
                 </p>
                 <ul className="space-y-2 mb-6">
                   {[
-                    "Medicare and Medicaid accepted",
-                    "Most major insurance plans",
-                    "Flexible payment arrangements",
-                    "Pre-authorization assistance"
+                    "Star Health & Allied Insurance",
+                    "HDFC ERGO Health Insurance",
+                    "ICICI Lombard",
+                    "Niva Bupa (Max Bupa)",
+                    "Care Health Insurance"
                   ].map((item, index) => (
                     <li key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-medical-teal" />
@@ -261,7 +260,7 @@ const Services = () => {
                 </Button>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardContent className="p-8">
                 <Users className="w-12 h-12 text-medical-teal mb-6" />
@@ -269,7 +268,7 @@ const Services = () => {
                   Accessibility & Comfort
                 </h3>
                 <p className="font-inter text-gray-700 mb-6">
-                  Our clinic is designed with accessibility and comfort in mind, 
+                  Our clinic is designed with accessibility and comfort in mind,
                   ensuring a welcoming environment for all patients and families.
                 </p>
                 <ul className="space-y-2 mb-6">
@@ -294,29 +293,6 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Emergency Contact */}
-      <section className="py-16 bg-medical-deep-blue text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Phone className="w-16 h-16 text-medical-teal mx-auto mb-6" />
-          <h2 className="font-playfair text-3xl md:text-4xl mb-6">
-            24/7 Emergency Support
-          </h2>
-          <p className="font-inter text-xl mb-8 opacity-90">
-            We understand that neurological conditions can create urgent situations. 
-            Our emergency line is always available for existing patients.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-medical-teal hover:bg-medical-teal/90 text-white px-8 py-3 text-lg font-inter">
-              Call Emergency Line: (555) 123-4567
-            </Button>
-            <Link to="/appointment">
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-medical-deep-blue px-8 py-3 text-lg font-inter">
-                Schedule Regular Appointment
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>

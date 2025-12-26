@@ -19,17 +19,17 @@ const CredentialsSection = () => {
       title: "Postgraduate Training",
       details: [
         "MRCPsych - Royal College of Psychiatrists, UK",
-        "CCT in Old Age Psychiatry - United Kingdom",
-        "Member of Royal College of Psychiatrists"
+        "CCT in Old Age Psychiatry - UK",
+        "MMedSci (Clinical Psychiatry) - UK"
       ]
     },
     {
       icon: Award,
       title: "Professional Certifications",
       details: [
-        "Certificate of Completion of Training (CCT)",
-        "Specialist Registration in Old Age Psychiatry",
-        "GMC Registration, United Kingdom"
+        "Certificate of Completion of Training (CCT, UK)",
+        "Specialist Registration - GMC (General Medical Council, UK)",
+        "Specialist Consultant in Geriatric Psychiatry"
       ]
     },
     {
@@ -48,7 +48,7 @@ const CredentialsSection = () => {
       {/* Background effects */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-medical-teal/5 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-medical-orange/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
-      
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <ScrollReveal direction="up" delay={0.1}>
           <div className="text-center mb-12">
@@ -57,7 +57,7 @@ const CredentialsSection = () => {
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-medical-teal to-medical-orange mx-auto mb-6 rounded-full shadow-md"></div>
             <p className="font-inter text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Extensive training and experience in geriatric psychiatry with a focus on compassionate, 
+              Extensive training and experience in geriatric psychiatry with a focus on compassionate,
               evidence-based treatment approaches for older adults.
             </p>
           </div>

@@ -4,8 +4,8 @@ import { Card } from '@/components/ui/card';
 import { MapPin, Navigation, Clock, Phone } from 'lucide-react';
 
 const GoogleMap = () => {
-  const clinicAddress = "4, Wind Tunnel Rd, Murugeshpalya, Kaveri Nagar, Bengaluru, Karnataka 560017";
-  
+  const clinicAddress = "No.6, Wind Tunnel Road, Kaveri Nagar, Murgesh Pallya, Bangalore 560017";
+
   return (
     <div className="w-full">
       <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-0">
@@ -13,14 +13,14 @@ const GoogleMap = () => {
           {/* Google Maps Embed using provided code */}
           <div className="mapouter relative text-right h-96 w-full">
             <div className="gmap_canvas overflow-hidden h-96 w-full">
-              <iframe 
-                width="100%" 
-                height="400" 
-                id="gmap_canvas" 
-                src="https://maps.google.com/maps?q=%204,%20Wind%20Tunnel%20Rd,%20Murugeshpalya,%20Kaveri%20Nagar,%20Bengaluru,%20Karnataka%20560017&t=&z=19&ie=UTF8&iwloc=&output=embed" 
-                frameBorder="0" 
-                scrolling="no" 
-                marginHeight={0} 
+              <iframe
+                width="100%"
+                height="400"
+                id="gmap_canvas"
+                src="https://maps.google.com/maps?q=No.6,%20Wind%20Tunnel%20Road,%20Kaveri%20Nagar,%20Murgesh%20Pallya,%20Bangalore%20560017&t=&z=18&ie=UTF8&iwloc=&output=embed"
+                frameBorder="0"
+                scrolling="no"
+                marginHeight={0}
                 marginWidth={0}
                 className="w-full h-96 rounded-t-lg"
                 title="Memory Matters Clinic Location"
@@ -28,7 +28,7 @@ const GoogleMap = () => {
               />
             </div>
           </div>
-          
+
           {/* Overlay with clinic info */}
           <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-xl max-w-xs border border-medical-teal/20">
             <div className="flex items-start space-x-3">
@@ -54,7 +54,7 @@ const GoogleMap = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Directions button */}
           <div className="absolute bottom-4 right-4">
             <a
@@ -69,7 +69,7 @@ const GoogleMap = () => {
           </div>
         </div>
       </Card>
-      
+
       {/* Additional clinic information */}
       <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card className="p-4 hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-white to-gray-50 border-0">
@@ -83,7 +83,7 @@ const GoogleMap = () => {
             </div>
           </div>
         </Card>
-        
+
         <Card className="p-4 hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-white to-gray-50 border-0">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-medical-deep-blue/10 rounded-full flex items-center justify-center">
@@ -95,7 +95,7 @@ const GoogleMap = () => {
             </div>
           </div>
         </Card>
-        
+
         <Card className="p-4 hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-white to-gray-50 border-0">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-green-500/10 rounded-full flex items-center justify-center">

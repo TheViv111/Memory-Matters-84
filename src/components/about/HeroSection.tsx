@@ -45,7 +45,7 @@ const HeroSection = () => {
               <ScrollReveal direction="up" delay={1.2}>
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   <div className="bg-white/90 backdrop-blur-md px-6 py-4 rounded-xl shadow-lg border border-medical-teal/20 hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:border-medical-teal/40 group">
-                    <div className="text-2xl font-bold text-medical-deep-blue group-hover:scale-110 transition-transform duration-300">15+</div>
+                    <div className="text-2xl font-bold text-medical-deep-blue group-hover:scale-110 transition-transform duration-300">20+</div>
                     <div className="font-inter text-sm text-gray-600">Years Experience</div>
                   </div>
                   <div className="bg-white/90 backdrop-blur-md px-6 py-4 rounded-xl shadow-lg border border-medical-orange/20 hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:border-medical-orange/40 group">
@@ -57,7 +57,7 @@ const HeroSection = () => {
               
               <ScrollReveal direction="up" delay={1.4}>
                 <div className="flex flex-wrap gap-3">
-                  {["MBBS", "DPM (Psychiatry)", "MRCPsych", "CCT Old Age Psychiatry"].map((credential, index) => (
+                  {["MBBS", "DPM (Psychiatry)", "MMedSci (Psychiatry)", "MRCPsych", "CCT Old Age Psychiatry"].map((credential, index) => (
                     <ScrollReveal key={index} direction="fade" delay={1.6 + index * 0.1}>
                       <div className="bg-gradient-to-r from-medical-teal/10 to-medical-orange/10 px-4 py-2 rounded-full border border-medical-teal/20 hover:from-medical-teal/20 hover:to-medical-orange/20 transition-all duration-300 hover:scale-105 hover:shadow-md backdrop-blur-sm">
                         <span className="font-inter text-medical-deep-blue font-medium text-sm">{credential}</span>

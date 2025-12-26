@@ -28,7 +28,7 @@ const EmergencyContactForm = ({ formData, handleInputChange }: EmergencyContactF
             Optional but recommended for your safety and peace of mind
           </p>
         </CardHeader>
-        
+
         <CardContent className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
@@ -43,7 +43,7 @@ const EmergencyContactForm = ({ formData, handleInputChange }: EmergencyContactF
                 placeholder="Full name of emergency contact"
               />
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="emergencyPhone" className="font-inter font-medium text-medical-charcoal">
                 Emergency Contact Phone
@@ -58,11 +58,11 @@ const EmergencyContactForm = ({ formData, handleInputChange }: EmergencyContactF
               />
             </div>
           </div>
-          
+
           <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
             <p className="font-inter text-xs text-blue-800 leading-relaxed">
-              <strong>Note:</strong> This information will only be used in case of an emergency during your visit. 
-              We respect your privacy and follow all HIPAA guidelines for protecting your personal information.
+              <strong>Note:</strong> This information will only be used in case of an emergency during your visit.
+              We respect your privacy and follow strict professional guidelines for protecting your personal information.
             </p>
           </div>
         </CardContent>

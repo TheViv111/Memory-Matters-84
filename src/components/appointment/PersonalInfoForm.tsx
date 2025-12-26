@@ -13,7 +13,6 @@ interface PersonalInfoFormProps {
     email: string;
     phone: string;
     dateOfBirth: string;
-    insurance: string;
     previousPatient: string;
   };
   handleInputChange: (field: string, value: string) => void;
@@ -34,7 +33,7 @@ const PersonalInfoForm = ({ formData, handleInputChange }: PersonalInfoFormProps
             Please provide accurate information for appointment confirmation
           </p>
         </CardHeader>
-        
+
         <CardContent className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 space-y-2">
             <div className="space-y-2">
@@ -50,7 +49,7 @@ const PersonalInfoForm = ({ formData, handleInputChange }: PersonalInfoFormProps
                 placeholder="Enter your first name"
               />
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="lastName" className="font-inter font-medium text-medical-charcoal">
                 Last Name *
@@ -64,7 +63,7 @@ const PersonalInfoForm = ({ formData, handleInputChange }: PersonalInfoFormProps
                 placeholder="Enter your last name"
               />
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="email" className="font-inter font-medium text-medical-charcoal">
                 Email Address *
@@ -79,7 +78,7 @@ const PersonalInfoForm = ({ formData, handleInputChange }: PersonalInfoFormProps
                 placeholder="your.email@example.com"
               />
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="phone" className="font-inter font-medium text-medical-charcoal">
                 Phone Number *
@@ -94,7 +93,7 @@ const PersonalInfoForm = ({ formData, handleInputChange }: PersonalInfoFormProps
                 placeholder="Enter your phone number"
               />
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="dateOfBirth" className="font-inter font-medium text-medical-charcoal">
                 Date of Birth *
@@ -108,20 +107,8 @@ const PersonalInfoForm = ({ formData, handleInputChange }: PersonalInfoFormProps
                 className="hover:border-medical-teal focus:border-medical-teal transition-colors duration-200 bg-white"
               />
             </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="insurance" className="font-inter font-medium text-medical-charcoal">
-                Insurance Provider
-              </Label>
-              <Input
-                id="insurance"
-                value={formData.insurance}
-                onChange={(e) => handleInputChange('insurance', e.target.value)}
-                placeholder="e.g., Blue Cross, Medicare, etc."
-                className="hover:border-medical-teal focus:border-medical-teal transition-colors duration-200 bg-white"
-              />
-            </div>
-            
+
+
             <div className="md:col-span-2 space-y-2">
               <Label className="font-inter font-medium text-medical-charcoal">
                 Are you a previous patient? *

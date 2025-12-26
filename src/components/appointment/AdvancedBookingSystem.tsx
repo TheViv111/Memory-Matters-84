@@ -18,7 +18,7 @@ const AdvancedBookingSystem = () => {
   const [appointmentType, setAppointmentType] = useState<string>('');
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -26,7 +26,6 @@ const AdvancedBookingSystem = () => {
     phone: '',
     dateOfBirth: '',
     reason: '',
-    insurance: '',
     previousPatient: '',
     medications: '',
     emergencyContact: '',
@@ -38,7 +37,7 @@ const AdvancedBookingSystem = () => {
     const dates = [];
     let current = new Date();
     let count = 0;
-    
+
     while (count < 30) {
       if (current.getDay() !== 0) { // Exclude Sundays
         dates.push(new Date(current));
@@ -71,28 +70,28 @@ const AdvancedBookingSystem = () => {
       title: 'Initial Consultation',
       duration: '90 minutes',
       description: 'Comprehensive first visit with detailed evaluation',
-      price: 'Covered by Insurance'
+      price: 'Standard Consultation Fee'
     },
     {
       id: 'followup',
       title: 'Follow-up Visit',
       duration: '45 minutes',
       description: 'Regular check-up and treatment adjustment',
-      price: 'Covered by Insurance'
+      price: 'Standard Follow-up Fee'
     },
     {
       id: 'assessment',
       title: 'Memory Assessment',
       duration: '2-3 hours',
       description: 'Detailed cognitive and neuropsychological testing',
-      price: 'Insurance Pre-auth Required'
+      price: 'Specialized Assessment Fee'
     },
     {
       id: 'family',
       title: 'Family Consultation',
       duration: '60 minutes',
       description: 'Family meeting to discuss care planning',
-      price: 'Covered by Insurance'
+      price: 'Standard Consultation Fee'
     }
   ];
 
@@ -146,7 +145,7 @@ const AdvancedBookingSystem = () => {
         title: "Appointment Requested Successfully! ✨",
         description: "Thank you! We'll confirm your appointment within 24 hours and send you a confirmation email.",
       });
-      
+
       // Reset form
       setFormData({
         firstName: '',
@@ -155,7 +154,6 @@ const AdvancedBookingSystem = () => {
         phone: '',
         dateOfBirth: '',
         reason: '',
-        insurance: '',
         previousPatient: '',
         medications: '',
         emergencyContact: '',
@@ -198,16 +196,14 @@ const AdvancedBookingSystem = () => {
           <div className="flex items-center justify-center space-x-4 md:space-x-8">
             {steps.map((step, index) => (
               <div key={step.number} className="flex items-center">
-                <div className={`flex items-center space-x-2 ${
-                  currentStep >= step.number 
-                    ? 'text-medical-teal' 
-                    : 'text-gray-400'
-                }`}>
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                    currentStep >= step.number
-                      ? 'bg-medical-teal text-white'
-                      : 'bg-gray-200 text-gray-400'
+                <div className={`flex items-center space-x-2 ${currentStep >= step.number
+                  ? 'text-medical-teal'
+                  : 'text-gray-400'
                   }`}>
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center ${currentStep >= step.number
+                    ? 'bg-medical-teal text-white'
+                    : 'bg-gray-200 text-gray-400'
+                    }`}>
                     {currentStep > step.number ? (
                       <CheckCircle className="w-5 h-5" />
                     ) : (
@@ -219,9 +215,8 @@ const AdvancedBookingSystem = () => {
                   </span>
                 </div>
                 {index < steps.length - 1 && (
-                  <div className={`w-8 h-0.5 mx-4 ${
-                    currentStep > step.number ? 'bg-medical-teal' : 'bg-gray-200'
-                  }`} />
+                  <div className={`w-8 h-0.5 mx-4 ${currentStep > step.number ? 'bg-medical-teal' : 'bg-gray-200'
+                    }`} />
                 )}
               </div>
             ))}
@@ -248,11 +243,10 @@ const AdvancedBookingSystem = () => {
                       onClick={() => {
                         setAppointmentType(type.id);
                       }}
-                      className={`p-6 rounded-xl border-2 cursor-pointer transition-all duration-300 hover:shadow-lg ${
-                        appointmentType === type.id
-                          ? 'border-medical-teal bg-medical-teal/5'
-                          : 'border-gray-200 hover:border-medical-teal/50'
-                      }`}
+                      className={`p-6 rounded-xl border-2 cursor-pointer transition-all duration-300 hover:shadow-lg ${appointmentType === type.id
+                        ? 'border-medical-teal bg-medical-teal/5'
+                        : 'border-gray-200 hover:border-medical-teal/50'
+                        }`}
                     >
                       <h3 className="font-playfair text-xl font-semibold text-medical-charcoal mb-2">
                         {type.title}
@@ -298,11 +292,10 @@ const AdvancedBookingSystem = () => {
                       <button
                         key={index}
                         onClick={() => setSelectedDate(date)}
-                        className={`p-2 text-sm font-inter rounded-lg transition-colors ${
-                          selectedDate && isSameDay(date, selectedDate)
-                            ? 'bg-medical-teal text-white'
-                            : 'hover:bg-medical-teal/10 text-gray-700'
-                        }`}
+                        className={`p-2 text-sm font-inter rounded-lg transition-colors ${selectedDate && isSameDay(date, selectedDate)
+                          ? 'bg-medical-teal text-white'
+                          : 'hover:bg-medical-teal/10 text-gray-700'
+                          }`}
                       >
                         {format(date, 'd')}
                       </button>
@@ -334,13 +327,12 @@ const AdvancedBookingSystem = () => {
                                 }
                               }}
                               disabled={!slot.available}
-                              className={`p-3 text-sm font-inter rounded-lg transition-colors ${
-                                selectedTime === slot.time
-                                  ? 'bg-medical-teal text-white'
-                                  : slot.available
+                              className={`p-3 text-sm font-inter rounded-lg transition-colors ${selectedTime === slot.time
+                                ? 'bg-medical-teal text-white'
+                                : slot.available
                                   ? 'bg-gray-50 hover:bg-medical-teal/10 text-gray-700'
                                   : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                              }`}
+                                }`}
                             >
                               {slot.time}
                               {!slot.available && (
@@ -350,7 +342,7 @@ const AdvancedBookingSystem = () => {
                           ))}
                         </div>
                       </div>
-                      
+
                       <div>
                         <h3 className="font-inter font-medium text-medical-charcoal mb-3">Afternoon</h3>
                         <div className="grid grid-cols-2 gap-2">
@@ -363,13 +355,12 @@ const AdvancedBookingSystem = () => {
                                 }
                               }}
                               disabled={!slot.available}
-                              className={`p-3 text-sm font-inter rounded-lg transition-colors ${
-                                selectedTime === slot.time
-                                  ? 'bg-medical-teal text-white'
-                                  : slot.available
+                              className={`p-3 text-sm font-inter rounded-lg transition-colors ${selectedTime === slot.time
+                                ? 'bg-medical-teal text-white'
+                                : slot.available
                                   ? 'bg-gray-50 hover:bg-medical-teal/10 text-gray-700'
                                   : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                              }`}
+                                }`}
                             >
                               {slot.time}
                               {!slot.available && (
@@ -414,7 +405,7 @@ const AdvancedBookingSystem = () => {
                       required
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label className="font-inter font-medium text-medical-charcoal">
                       Last Name *
@@ -426,7 +417,7 @@ const AdvancedBookingSystem = () => {
                       required
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label className="font-inter font-medium text-medical-charcoal">
                       Email Address *
@@ -439,7 +430,7 @@ const AdvancedBookingSystem = () => {
                       required
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label className="font-inter font-medium text-medical-charcoal">
                       Phone Number *
@@ -452,7 +443,7 @@ const AdvancedBookingSystem = () => {
                       required
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label className="font-inter font-medium text-medical-charcoal">
                       Date of Birth *
@@ -465,20 +456,9 @@ const AdvancedBookingSystem = () => {
                       required
                     />
                   </div>
-                  
-                  <div className="space-y-2">
-                    <Label className="font-inter font-medium text-medical-charcoal">
-                      Insurance Provider
-                    </Label>
-                    <Input
-                      value={formData.insurance}
-                      onChange={(e) => handleInputChange('insurance', e.target.value)}
-                      className="border-2 hover:border-medical-teal transition-colors"
-                      placeholder="e.g., Blue Cross, Aetna, etc."
-                    />
-                  </div>
+
                 </div>
-                
+
                 <div className="mt-6 space-y-6">
                   <div className="space-y-2">
                     <Label className="font-inter font-medium text-medical-charcoal">
@@ -492,7 +472,7 @@ const AdvancedBookingSystem = () => {
                       required
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label className="font-inter font-medium text-medical-charcoal">
                       Current Medications
@@ -504,7 +484,7 @@ const AdvancedBookingSystem = () => {
                       placeholder="List all current medications, dosages, and frequency..."
                     />
                   </div>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label className="font-inter font-medium text-medical-charcoal">
@@ -516,7 +496,7 @@ const AdvancedBookingSystem = () => {
                         className="border-2 hover:border-medical-teal transition-colors"
                       />
                     </div>
-                    
+
                     <div className="space-y-2">
                       <Label className="font-inter font-medium text-medical-charcoal">
                         Emergency Contact Phone
@@ -641,13 +621,13 @@ const AdvancedBookingSystem = () => {
           >
             Previous Step
           </Button>
-          
+
           <div className="text-center">
             <p className="font-inter text-sm text-gray-600">
               Step {currentStep} of {steps.length}
             </p>
           </div>
-          
+
           {currentStep < 4 && (
             <Button
               onClick={() => {
