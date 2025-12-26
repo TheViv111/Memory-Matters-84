@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Star, Quote, CheckCircle } from 'lucide-react';
+import { Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import {
   Carousel,
@@ -25,52 +25,10 @@ const PatientTestimonials = () => {
 
   const testimonials = [
     {
-      name: "Anonymous Patient Review",
-      relation: "Verified Patient",
-      content: "Excellent doctor. Very patient and gentle. Takes detailed history. Conservative in approach, patient-centric, and also provides a lot of education and advice to caregivers and family members. Truly a gem! Mon-Fri 9 to 4, Sat 9 to 1 at the clinic. Need to take prior appointment.",
-      rating: 5,
-      verified: true,
-      treatment: "Memory Assessment"
+      content: "Good morning Dear Dr Soumya\nWanted to share with you the news that am.joining Nightingale medical trust in Dec\nYou deserve all the credit dear, in making me confident and introducing me to various options available \nCan't thank you enough🙏🏻\nGood day"
     },
     {
-      name: "Sujata Rao",
-      relation: "Daughter of Patient",
-      content: "Dr. Hegde's compassionate approach made such a difficult time more manageable. She took time to explain everything and helped us understand Dad's condition with patience and clarity. The follow-up care has been exceptional.",
-      rating: 5,
-      verified: true,
-      treatment: "Dementia Care"
-    },
-    {
-      name: "Arvind K.",
-      relation: "Patient",
-      content: "The memory assessment was thorough yet comfortable. Dr. Hegde and her team made me feel heard and respected throughout the entire process. The treatment plan was clearly explained and very effective.",
-      rating: 5,
-      verified: true,
-      treatment: "Cognitive Evaluation"
-    },
-    {
-      name: "Priya Sharma",
-      relation: "Family Member",
-      content: "We were struggling with my mother's mood changes. Dr. Hegde not only helped with the medical treatment but also educated our entire family on how to provide better support. Life-changing experience.",
-      rating: 5,
-      verified: true,
-      treatment: "Mood Disorders"
-    },
-    {
-      name: "Dr. Sandeep Reddy",
-      relation: "Referring Physician",
-      content: "I regularly refer my elderly patients to Dr. Hegde. Her expertise in geriatric psychiatry is unmatched, and the feedback from patients and families is consistently outstanding. Highly professional.",
-      rating: 5,
-      verified: true,
-      treatment: "Professional Referral"
-    },
-    {
-      name: "Anonymous Family",
-      relation: "Caregiver Support",
-      content: "The family support services were invaluable during our journey with Alzheimer's. Dr. Hegde provided not just medical care but emotional support and practical guidance that helped us navigate this challenging time.",
-      rating: 5,
-      verified: true,
-      treatment: "Family Support"
+      content: "Excellent doctor. Very patient and gentle. Takes detailed history. Conservative in approach, patient-centric, and also provides a lot of education and advice to caregivers and family members. Truly a gem! Mon-Fri 9 to 4, Sat 9 to 1 at the clinic. Need to take prior appointment."
     }
   ];
 
@@ -94,44 +52,20 @@ const PatientTestimonials = () => {
         <Carousel
           setApi={setApi}
           opts={{
-            align: "start",
+            align: "center",
             loop: true,
           }}
-          className="w-full"
+          className="w-full max-w-4xl mx-auto"
         >
           <CarouselContent className="-ml-4">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <Card className={`h-full border-l-4 border-medical-teal hover:shadow-2xl transition-all duration-300 ${index === 0 ? 'bg-gradient-to-br from-medical-teal/5 to-medical-deep-blue/5 ring-2 ring-medical-teal/20 shadow-xl' : 'bg-white shadow-lg'
-                  }`}>
-                  <CardContent className="p-6 h-full flex flex-col">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                        ))}
-                      </div>
-                      {testimonial.verified && (
-                        <div className="flex items-center space-x-1">
-                          <CheckCircle className="w-4 h-4 text-green-500" />
-                          <span className="text-xs text-green-600 font-medium">Verified</span>
-                        </div>
-                      )}
-                    </div>
-
-                    <Quote className="w-8 h-8 text-medical-teal/30 mb-4" />
-
-                    <p className="font-inter text-gray-700 mb-6 italic leading-relaxed flex-grow">
+              <CarouselItem key={index} className="pl-4 md:basis-1/2">
+                <Card className="h-full border-l-4 border-medical-teal shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
+                  <CardContent className="p-8 h-full flex flex-col items-center text-center justify-center">
+                    <Quote className="w-10 h-10 text-medical-teal/20 mb-6" />
+                    <p className="font-inter text-gray-700 text-lg italic leading-relaxed whitespace-pre-line">
                       "{testimonial.content}"
                     </p>
-
-                    <div className="border-t pt-4">
-                      <p className="font-semibold text-medical-charcoal">{testimonial.name}</p>
-                      <p className="text-sm text-gray-600 mb-2">{testimonial.relation}</p>
-                      <div className="inline-flex items-center px-3 py-1 bg-medical-teal/10 rounded-full">
-                        <span className="text-xs text-medical-teal font-medium">{testimonial.treatment}</span>
-                      </div>
-                    </div>
                   </CardContent>
                 </Card>
               </CarouselItem>
