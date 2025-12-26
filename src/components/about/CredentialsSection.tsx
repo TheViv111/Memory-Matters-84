@@ -7,16 +7,10 @@ const CredentialsSection = () => {
   const credentials = [
     {
       icon: School,
-      title: "Medical Education",
+      title: "Education",
       details: [
         "MBBS - Grant Medical College & Sir JJ Hospital, Mumbai",
-        "DPM (Psychiatry) - Lokmanya Tilak Municipal Medical College, Sion, Mumbai"
-      ]
-    },
-    {
-      icon: University,
-      title: "Postgraduate Training",
-      details: [
+        "DPM (Psychiatry) - Lokmanya Tilak Municipal Medical College, Sion, Mumbai",
         "MRCPsych - Royal College of Psychiatrists, UK",
         "CCT in Old Age Psychiatry - UK",
         "MMedSci (Clinical Psychiatry) - UK"
@@ -24,11 +18,11 @@ const CredentialsSection = () => {
     },
     {
       icon: Award,
-      title: "Professional Certifications",
+      title: "Professional Affiliations",
       details: [
-        "Certificate of Completion of Training (CCT, UK)",
-        "Specialist Registration - GMC (General Medical Council, UK)",
-        "Specialist Consultant in Geriatric Psychiatry"
+        "Life member of Indian Psychiatric Society",
+        "Royal College of Psychiatrists",
+        "Specialist Register in Geriatric Psychiatry"
       ]
     },
     {

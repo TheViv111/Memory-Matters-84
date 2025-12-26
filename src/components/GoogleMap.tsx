@@ -45,7 +45,7 @@ const GoogleMap = () => {
                 </p>
                 <div className="flex items-center space-x-1 mt-2">
                   <Clock className="w-4 h-4 text-medical-teal" />
-                  <span className="font-inter text-xs text-gray-600">Mon-Sat: 9AM-4PM</span>
+                  <span className="font-inter text-xs text-gray-600">Mon-Fri: 9AM-4PM | Sat: 9AM-1PM</span>
                 </div>
                 <div className="flex items-center space-x-1 mt-1">
                   <Phone className="w-4 h-4 text-medical-teal" />
@@ -79,7 +79,8 @@ const GoogleMap = () => {
             </div>
             <div>
               <p className="font-inter font-medium text-medical-charcoal">Office Hours</p>
-              <p className="font-inter text-sm text-gray-600">Mon-Sat: 9:00 AM - 4:00 PM</p>
+              <p className="font-inter text-sm text-gray-600">Mon-Fri: 9:00 AM - 4:00 PM</p>
+              <p className="font-inter text-sm text-gray-600">Sat: 9:00 AM - 1:00 PM</p>
             </div>
           </div>
         </Card>

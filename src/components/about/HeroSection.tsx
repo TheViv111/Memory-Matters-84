@@ -18,17 +18,14 @@ const HeroSection = () => {
             </div>
 
             <h1 className="font-playfair text-4xl md:text-5xl text-medical-charcoal mb-6 leading-tight">
-              Meet Dr. Soumya Hegde
-              <span className="block text-medical-teal text-3xl md:text-4xl mt-2 bg-gradient-to-r from-medical-teal to-medical-deep-blue bg-clip-text text-transparent">
-                Your Memory Care Specialist
-              </span>
+              About
             </h1>
 
             <div className="w-20 h-1 bg-gradient-to-r from-medical-teal to-medical-orange mb-6 rounded-full shadow-md"></div>
 
             <p className="font-inter text-xl text-gray-700 leading-relaxed mb-8">
-              A compassionate geriatric psychiatrist with specialized expertise in old age psychiatry,
-              memory disorders, and cognitive health. Dr. Hegde combines advanced medical training
+              Dr Soumya Hegde is a compassionate geriatric psychiatrist with specialized expertise in old age psychiatry,
+              memory disorders, and cognitive health. She combines advanced medical training
               with a patient-centered approach to provide comprehensive mental health care for older adults.
             </p>
 

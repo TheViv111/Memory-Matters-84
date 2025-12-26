@@ -49,19 +49,32 @@ const AdvancedBookingSystem = () => {
 
   const availableDates = generateAvailableDates();
 
-  // Generate time slots
-  const timeSlots = [
-    { time: '9:00 AM', available: true, type: 'morning' },
-    { time: '9:45 AM', available: true, type: 'morning' },
-    { time: '10:30 AM', available: false, type: 'morning' },
-    { time: '11:15 AM', available: true, type: 'morning' },
-    { time: '12:00 PM', available: true, type: 'morning' },
-    { time: '1:00 PM', available: true, type: 'afternoon' },
-    { time: '1:45 PM', available: true, type: 'afternoon' },
-    { time: '2:30 PM', available: false, type: 'afternoon' },
-    { time: '3:15 PM', available: true, type: 'afternoon' },
-    { time: '4:00 PM', available: true, type: 'afternoon' }
-  ];
+  // Generate time slots based on selected day
+  const getTimeSlots = () => {
+    const baseSlots = [
+      { time: '9:00 AM', available: true, type: 'morning' },
+      { time: '9:45 AM', available: true, type: 'morning' },
+      { time: '10:30 AM', available: false, type: 'morning' },
+      { time: '11:15 AM', available: true, type: 'morning' },
+      { time: '12:00 PM', available: true, type: 'morning' },
+      { time: '1:00 PM', available: true, type: 'afternoon' },
+      { time: '1:45 PM', available: true, type: 'afternoon' },
+      { time: '2:30 PM', available: false, type: 'afternoon' },
+      { time: '3:15 PM', available: true, type: 'afternoon' }
+    ];
+
+    if (!selectedDate) return baseSlots;
+
+    const isSaturday = selectedDate.getDay() === 6;
+    if (isSaturday) {
+      // Return only morning slots for Saturday
+      return baseSlots.filter(slot => slot.type === 'morning');
+    }
+
+    return baseSlots;
+  };
+
+  const timeSlots = getTimeSlots();
 
   const appointmentTypes = [
     {

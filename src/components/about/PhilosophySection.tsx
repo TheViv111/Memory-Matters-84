@@ -13,12 +13,12 @@ const PhilosophySection = () => {
     {
       icon: Users,
       title: "Family-Centered Approach",
-      description: "We involve families in the care process, providing support and education throughout the journey."
+      description: "Families are involved in the care process, providing support and education throughout the journey."
     },
     {
       icon: Shield,
       title: "Evidence-Based Treatment",
-      description: "Our treatments are grounded in the latest research and proven medical practices."
+      description: "Treatments are grounded in the latest research and proven medical practices."
     },
     {
       icon: Star,

@@ -7,7 +7,6 @@ import ContactInfo from '@/components/contact/ContactInfo';
 import ContactForm from '@/components/contact/ContactForm';
 import ContactOfficeHours from '@/components/contact/ContactOfficeHours';
 import ContactLocationInfo from '@/components/contact/ContactLocationInfo';
-import ContactInsuranceInfo from '@/components/contact/ContactInsuranceInfo';
 import ContactHelpSection from '@/components/contact/ContactHelpSection';
 import ContactMapSection from '@/components/contact/ContactMapSection';
 import ContactPrivacyNotice from '@/components/contact/ContactPrivacyNotice';
@@ -32,7 +31,6 @@ const Contact = () => {
             <div className="space-y-4 sm:space-y-6">
               <ContactOfficeHours />
               <ContactLocationInfo />
-              <ContactInsuranceInfo />
             </div>
           </div>
         </div>

@@ -17,7 +17,8 @@ const ContactOfficeHours = () => {
       <CardContent>
         <div className="space-y-3">
           {[
-            { day: "Monday - Saturday", hours: "9:00 AM - 4:00 PM" },
+            { day: "Monday - Friday", hours: "9:00 AM - 4:00 PM" },
+            { day: "Saturday", hours: "9:00 AM - 1:00 PM" },
             { day: "Sunday", hours: "Closed", closed: true }
           ].map((schedule, index) => (
             <div key={index} className="flex justify-between items-center hover:bg-gradient-to-r hover:from-medical-teal/5 hover:to-medical-orange/5 p-3 rounded-lg transition-all duration-300">

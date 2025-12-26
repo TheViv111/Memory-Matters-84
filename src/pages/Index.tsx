@@ -140,7 +140,8 @@ const Index = () => {
               <Clock className="w-5 h-5 text-medical-teal" />
               <span className="font-inter font-semibold">Office Hours</span>
             </div>
-            <p className="font-inter mb-2">Monday - Saturday: 9:00 AM - 4:00 PM</p>
+            <p className="font-inter mb-2">Monday - Friday: 9:00 AM - 4:00 PM</p>
+            <p className="font-inter mb-2">Saturday: 9:00 AM - 1:00 PM</p>
             <p className="font-inter text-sm opacity-75">Prior appointment required</p>
           </div>
         </div>

@@ -9,7 +9,7 @@ const PatientTestimonials = () => {
     {
       name: "Anonymous Patient Review",
       relation: "Verified Patient",
-      content: "Excellent doctor. Very patient and gentle. Takes detailed history. Conservative in approach, patient-centric, and also provides a lot of education and advice to caregivers and family members. Truly a gem! M-S 9 to 4 at the clinic. Need to take prior appointment.",
+      content: "Excellent doctor. Very patient and gentle. Takes detailed history. Conservative in approach, patient-centric, and also provides a lot of education and advice to caregivers and family members. Truly a gem! Mon-Fri 9 to 4, Sat 9 to 1 at the clinic. Need to take prior appointment.",
       rating: 5,
       verified: true,
       treatment: "Memory Assessment"

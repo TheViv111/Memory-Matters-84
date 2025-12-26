@@ -34,7 +34,7 @@ const ContactFormFields = ({ formData, onFieldChange }: ContactFormFieldsProps) 
             placeholder="Enter your full name"
           />
         </div>
-        
+
         <div>
           <Label htmlFor="phone" className="font-inter font-medium text-medical-charcoal">
             Phone Number
@@ -49,7 +49,7 @@ const ContactFormFields = ({ formData, onFieldChange }: ContactFormFieldsProps) 
           />
         </div>
       </div>
-      
+
       <div>
         <Label htmlFor="email" className="font-inter font-medium text-medical-charcoal">
           Email Address *
@@ -64,7 +64,7 @@ const ContactFormFields = ({ formData, onFieldChange }: ContactFormFieldsProps) 
           placeholder="Enter your email address"
         />
       </div>
-      
+
       <div>
         <Label className="font-inter font-medium text-medical-charcoal">
           Subject *
@@ -75,15 +75,13 @@ const ContactFormFields = ({ formData, onFieldChange }: ContactFormFieldsProps) 
           </SelectTrigger>
           <SelectContent className="bg-white border-2 border-medical-teal/20 shadow-xl z-50">
             <SelectItem value="appointment">Schedule Appointment</SelectItem>
-            <SelectItem value="insurance">Insurance Questions</SelectItem>
             <SelectItem value="records">Medical Records</SelectItem>
             <SelectItem value="services">Services Information</SelectItem>
-            <SelectItem value="billing">Billing Inquiry</SelectItem>
             <SelectItem value="other">Other</SelectItem>
           </SelectContent>
         </Select>
       </div>
-      
+
       <div>
         <Label className="font-inter font-medium text-medical-charcoal">
           Preferred Contact Method
@@ -99,7 +97,7 @@ const ContactFormFields = ({ formData, onFieldChange }: ContactFormFieldsProps) 
           </SelectContent>
         </Select>
       </div>
-      
+
       <div>
         <Label htmlFor="message" className="font-inter font-medium text-medical-charcoal">
           Message *

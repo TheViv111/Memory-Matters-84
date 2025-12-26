@@ -24,7 +24,7 @@ const ContactHelpSection = () => {
               icon: Phone,
               title: "Call Us",
               content: "+91 89044 18172",
-              subtitle: "Mon-Fri: 8AM-5PM",
+              subtitle: "Mon-Fri: 9AM-4PM | Sat: 9AM-1PM",
               action: "Call Now",
               path: "tel:+918904418172"
             },

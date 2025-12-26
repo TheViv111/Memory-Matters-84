@@ -78,7 +78,11 @@ const Footer = () => {
             <div className="space-y-2 text-gray-300">
               <div className="flex items-center space-x-2 hover:text-medical-teal transition-colors duration-200">
                 <Clock size={16} className="text-medical-teal" />
-                <span className="text-sm">Mon-Sat: 9:00 AM - 4:00 PM</span>
+                <span className="text-sm">Mon-Fri: 9:00 AM - 4:00 PM</span>
+              </div>
+              <div className="flex items-center space-x-2 hover:text-medical-teal transition-colors duration-200">
+                <Clock size={16} className="text-medical-teal" />
+                <span className="text-sm">Saturday: 9:00 AM - 1:00 PM</span>
               </div>
               <div className="pl-6 text-sm">Sunday: Closed</div>
               <div className="pt-2 text-sm text-medical-teal font-medium border-t border-gray-600 mt-3">

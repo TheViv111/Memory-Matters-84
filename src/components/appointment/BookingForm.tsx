@@ -19,28 +19,35 @@ interface BookingFormProps {
 
 const BookingForm = ({ selectedDate, setSelectedDate, selectedTime, setSelectedTime }: BookingFormProps) => {
   // Generate time slots with 45-minute appointments and 15-minute breaks
-  const generateTimeSlots = () => {
-    const slots = [];
+  const generateTimeSlots = (date: Date | undefined) => {
+    if (!date) return [];
 
-    // Morning slots: 9:00 AM to 12:00 PM
+    // Check if it's Saturday (6)
+    const isSaturday = date.getDay() === 6;
+
+    // Morning slots: 9:00 AM to 1:00 PM (Available both Mon-Fri and Sat)
     const morningSlots = [
       '9:00 AM - 9:45 AM',
       '10:00 AM - 10:45 AM',
-      '11:00 AM - 11:45 AM'
+      '11:00 AM - 11:45 AM',
+      '12:00 PM - 12:45 PM'
     ];
 
-    // Afternoon slots: 1:00 PM to 5:00 PM
+    if (isSaturday) {
+      return morningSlots;
+    }
+
+    // Afternoon slots: 1:00 PM to 4:00 PM (Mon-Fri only)
     const afternoonSlots = [
       '1:00 PM - 1:45 PM',
       '2:00 PM - 2:45 PM',
-      '3:00 PM - 3:45 PM',
-      '4:00 PM - 4:45 PM'
+      '3:00 PM - 3:45 PM'
     ];
 
     return [...morningSlots, ...afternoonSlots];
   };
 
-  const availableTimes = generateTimeSlots();
+  const availableTimes = generateTimeSlots(selectedDate);
 
   return (
     <Card className="shadow-2xl border-0 bg-gradient-to-br from-white via-white to-gray-50/50 backdrop-blur-sm hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] relative overflow-hidden">

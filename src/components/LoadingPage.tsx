@@ -49,7 +49,7 @@ const LoadingPage = () => {
             <span className="font-semibold">Dr. Soumya Hegde</span>
           </p>
           <p className="font-inter text-xs text-gray-600">Geriatric Psychiatrist</p>
-          <p className="font-inter text-xs text-medical-teal mt-1">Mon-Sat: 9:00 AM - 4:00 PM</p>
+          <p className="font-inter text-xs text-medical-teal mt-1">Mon-Fri: 9:00 AM - 4:00 PM | Sat: 9:00 AM - 1:00 PM</p>
         </div>
       </div>
     </div>
