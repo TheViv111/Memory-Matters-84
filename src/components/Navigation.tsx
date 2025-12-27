@@ -37,7 +37,7 @@ const Navigation = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white/90 backdrop-blur-sm shadow-md'
       }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex items-center h-16">
           <Link to="/" className="flex items-center space-x-3 hover:scale-105 transition-transform duration-200 group flex-shrink-0" onClick={handleLinkClick}>
             <div className="w-14 h-14 rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 border-2 border-medical-teal/10 flex-shrink-0 flex items-center justify-center bg-white p-0.5">
               <img src="/logo.jpeg" alt="Memory Matters Logo" className="w-full h-full object-contain rounded-full" />
@@ -47,8 +47,8 @@ const Navigation = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex flex-1 justify-center items-center space-x-4 xl:space-x-8">
             {[
               { name: 'Home', path: '/' },
               { name: 'About', path: '/about' },
@@ -69,9 +69,10 @@ const Navigation = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-medical-teal to-medical-orange transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
+          </div>
 
-
-            {/* Contact */}
+          {/* Contact - Right Aligned */}
+          <div className="hidden lg:flex items-center">
             <a href="tel:+918904418172" className="flex items-center space-x-2 px-3 py-2 text-medical-deep-blue hover:text-medical-orange transition-colors shrink-0">
               <Phone className="w-4 h-4" />
               <span className="font-inter text-sm font-medium whitespace-nowrap">+91 89044 18172</span>
@@ -79,7 +80,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden ml-auto">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 hover:text-medical-teal focus:outline-none focus:text-medical-teal transition-colors duration-200 p-2 rounded-lg bg-gray-50 hover:bg-gray-100"

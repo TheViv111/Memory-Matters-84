@@ -43,19 +43,19 @@ const Index = () => {
               description: "Comprehensive assessment using clinical expertise to diagnose and type different forms of dementia."
             }, {
               icon: <Shield className="w-8 h-8 text-medical-teal" />,
-              title: "Behavioral Management",
+              title: "Management of Challenging Behaviours",
               description: "Specialized strategies for managing challenging behaviors associated with cognitive decline."
             }, {
               icon: <Calendar className="w-8 h-8 text-medical-teal" />,
-              title: "Geriatric Psychiatry",
+              title: "Treatment of Psychiatric Disorders in Seniors",
               description: "Expert treatment of psychiatric disorders specifically tailored for the senior population."
             }, {
               icon: <Heart className="w-8 h-8 text-medical-teal" />,
-              title: "Cognitive Therapy",
+              title: "Cognitive Stimulation Therapy",
               description: "Evidence-based cognitive stimulation therapy to support and maintain brain health."
             }, {
               icon: <Users className="w-8 h-8 text-medical-teal" />,
-              title: "Family Education",
+              title: "Family Education and Support",
               description: "Comprehensive support and education for families and caregivers throughout the care journey."
             }].map((service, index) => (
               <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white border-0 shadow-lg">

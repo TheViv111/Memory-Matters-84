@@ -75,7 +75,7 @@ const HeroSection = () => {
           <div className="relative lg:ml-8 lg:mt-0 mt-8">
             {/* Main Professional Card */}
             <div className="relative overflow-hidden">
-              <div className="bg-gradient-to-br from-white via-slate-50 to-blue-50 p-8 rounded-3xl shadow-2xl border border-medical-teal/20 hover:shadow-3xl transition-all duration-500 hover:scale-105 backdrop-blur-sm">
+              <div className="bg-gradient-to-br from-white via-slate-50 to-blue-50 p-8 rounded-3xl shadow-2xl border border-medical-teal/20 hover:shadow-3xl transition-all duration-500 backdrop-blur-sm">
                 <div className="space-y-8">
                   {/* Doctor Image */}
                   <div className="text-center">
@@ -106,28 +106,21 @@ const HeroSection = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-3 p-3 bg-white/60 rounded-lg">
-                    <CheckCircle className="w-5 h-5 text-medical-teal" />
+                  <div className="flex items-center space-x-3 p-3 bg-white/60 rounded-lg text-center justify-center">
                     <span className="font-inter text-sm text-gray-700">MRCPsych - Royal College of Psychiatrists</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-3 bg-white/60 rounded-lg">
-                    <CheckCircle className="w-5 h-5 text-medical-teal" />
+                  <div className="flex items-center space-x-3 p-3 bg-white/60 rounded-lg text-center justify-center">
                     <span className="font-inter text-sm text-gray-700">CCT in Old Age Psychiatry</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-3 bg-white/60 rounded-lg">
-                    <CheckCircle className="w-5 h-5 text-medical-teal" />
+                  <div className="flex items-center space-x-3 p-3 bg-white/60 rounded-lg text-center justify-center">
                     <span className="font-inter text-sm text-gray-700">MBBS - Grant Medical College, Mumbai</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-3 bg-white/60 rounded-lg">
-                    <CheckCircle className="w-5 h-5 text-medical-teal" />
+                  <div className="flex items-center space-x-3 p-3 bg-white/60 rounded-lg text-center justify-center">
                     <span className="font-inter text-sm text-gray-700">DPM - Lokmanya Tilak Medical College</span>
                   </div>
                 </div>
               </div>
 
-              {/* Floating accent elements - Fixed positioning */}
-              <div className="absolute top-2 right-2 w-12 h-12 bg-gradient-to-br from-medical-orange to-medical-teal rounded-full shadow-lg"></div>
-              <div className="absolute bottom-2 left-2 w-8 h-8 bg-gradient-to-br from-medical-teal to-medical-deep-blue rounded-full shadow-lg"></div>
             </div>
           </div>
         </div>

@@ -7,6 +7,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
   type CarouselApi,
 } from "@/components/ui/carousel";
 
@@ -32,6 +34,12 @@ const PatientTestimonials = () => {
     },
     {
       content: "I knew this smile will blossom, just didn't know well. Thanks to the Supreme, thanks to you, thanks to life 🙏🏻, she smiles better than ever before 🤗"
+    },
+    {
+      content: "I was looking for a geriatric psychiatrist and that's how I came across her. It was our first visit to Dr. Soumya Hegde. I had been there for my father's treatment for his depression and anxiety. The doctor was really friendly, calm, pleasant, empathetic, confident and a very good listener. She listened patiently to us and apart from discussing the medications she also suggested few life style changes. We are looking forward to our next visit."
+    },
+    {
+      content: "Doctor Soumya is a gem of a person. So incredibly patient and understanding. Would highly recommend!"
     }
   ];
 
@@ -51,14 +59,13 @@ const PatientTestimonials = () => {
           </p>
         </div>
 
-        {/* Testimonials Carousel */}
         <Carousel
           setApi={setApi}
           opts={{
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-6xl mx-auto"
+          className="w-full max-w-6xl mx-auto px-12 md:px-0"
         >
           <CarouselContent className="-ml-4">
             {testimonials.map((testimonial, index) => (
@@ -74,6 +81,8 @@ const PatientTestimonials = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
+          <CarouselPrevious className="hidden md:flex -left-12 border-medical-teal text-medical-teal hover:bg-medical-teal hover:text-white" />
+          <CarouselNext className="hidden md:flex -right-12 border-medical-teal text-medical-teal hover:bg-medical-teal hover:text-white" />
         </Carousel>
 
       </div>
