@@ -14,7 +14,7 @@ const Resources = () => {
       <Navigation />
       <ResourcesHero searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <EducationalVideos searchQuery={searchQuery} />
-      <EducationalArticles />
+      <EducationalArticles searchQuery={searchQuery} />
       <Footer />
     </div>
   );
