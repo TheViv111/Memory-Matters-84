@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { GraduationCap, Award, Users, Heart, School, University } from 'lucide-react';
+import { GraduationCap, Award, Users, Heart, School, University, Briefcase, FileCheck } from 'lucide-react';
 
 const CredentialsSection = () => {
   const credentials = [
@@ -17,7 +17,7 @@ const CredentialsSection = () => {
       ]
     },
     {
-      icon: Award,
+      icon: Users,
       title: "Professional Affiliations",
       details: [
         "Life member of Indian Psychiatric Society",
@@ -26,12 +26,18 @@ const CredentialsSection = () => {
       ]
     },
     {
-      icon: Heart,
-      title: "Areas of Expertise",
+      icon: Briefcase,
+      title: "Experience",
       details: [
-        "Geriatric Psychiatry & Mental Health",
-        "Memory Disorders & Dementia Care",
-        "Cognitive Health Assessment & Treatment"
+        "2017 - 2024 Consultant Psychiatrist at Private clinic"
+      ]
+    },
+    {
+      icon: FileCheck,
+      title: "Memberships & Registrations",
+      details: [
+        "Memberships: Karnataka Medical Council",
+        "Registrations: MAH19990000234KTK Karnataka Medical Council"
       ]
     }
   ];
