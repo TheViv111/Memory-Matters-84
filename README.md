@@ -1,73 +1,58 @@
-# Welcome to your Lovable project
+# Memory Matters
 
-## Project info
+A professional website for Dr. Soumya Hegde, Geriatric Psychiatrist, dedicated to providing specialized mental health care for older adults.
 
-**URL**: https://lovable.dev/projects/f4a7bf0b-2c83-4fb6-8260-b7de4bef88a1
+## Project Overview
 
-## How can I edit this code?
+This project is a React-based web application designed to showcase geriatric psychiatry services, resources for caregivers, and clinic information.
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/f4a7bf0b-2c83-4fb6-8260-b7de4bef88a1) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Technologies Used
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- [Vite](https://vitejs.dev/) - Frontend Tooling
+- [React](https://reactjs.org/) - UI Library
+- [TypeScript](https://www.typescriptlang.org/) - Static Type Checking
+- [shadcn/ui](https://ui.shadcn.com/) - Reusable Components
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS Framework
 
-## How can I deploy this project?
+## Getting Started
 
-Simply open [Lovable](https://lovable.dev/projects/f4a7bf0b-2c83-4fb6-8260-b7de4bef88a1) and click on Share -> Publish.
+To get a local copy up and running, follow these steps.
 
-## Can I connect a custom domain to my Lovable project?
+### Prerequisites
 
-Yes, you can!
+Ensure you have Node.js and npm installed on your machine.
+- [Download Node.js](https://nodejs.org/)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Installation
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1.  Clone the repository:
+    ```sh
+    git clone <YOUR_GIT_URL>
+    ```
+
+2.  Navigate to the project directory:
+    ```sh
+    cd Memory-Matters-84
+    ```
+
+3.  Install dependencies:
+    ```sh
+    npm install
+    ```
+
+4.  Start the development server:
+    ```sh
+    npm run dev
+    ```
+
+## Development
+
+-   **Development Server**: `npm run dev` serves the application at `http://localhost:8080` (or similar) with hot module replacement.
+-   **Build**: `npm run build` bundles the app for production.
+-   **Preview**: `npm run preview` to locally preview the production build.
+
+## License
+
+All rights reserved.
