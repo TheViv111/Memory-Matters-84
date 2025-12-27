@@ -44,7 +44,7 @@ const PatientTestimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-white to-medical-beige/30 overflow-hidden">
+    <section className="py-12 bg-gradient-to-br from-white to-medical-beige/30 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-block px-6 py-2 bg-medical-teal/10 rounded-full mb-6">

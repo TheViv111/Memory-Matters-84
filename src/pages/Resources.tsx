@@ -7,11 +7,13 @@ import EducationalVideos from '@/components/resources/EducationalVideos';
 import EducationalArticles from '@/components/resources/EducationalArticles';
 
 const Resources = () => {
+  const [searchQuery, setSearchQuery] = React.useState('');
+
   return (
     <div className="min-h-screen bg-medical-beige">
       <Navigation />
-      <ResourcesHero />
-      <EducationalVideos />
+      <ResourcesHero searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <EducationalVideos searchQuery={searchQuery} />
       <EducationalArticles />
       <Footer />
     </div>

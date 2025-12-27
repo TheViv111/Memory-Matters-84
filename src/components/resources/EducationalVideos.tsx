@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Play } from 'lucide-react';
 
-const EducationalVideos = () => {
+const EducationalVideos = ({ searchQuery }: { searchQuery: string }) => {
   const educationalVideos = [
     {
       title: "Anxiety in the elderly with Dr Soumya Hegde",
@@ -52,8 +52,23 @@ const EducationalVideos = () => {
     }
   ];
 
+  const filteredVideos = educationalVideos.filter(video =>
+    video.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    video.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  if (filteredVideos.length === 0) {
+    return (
+      <section className="py-12 bg-white">
+        <div className="text-center text-gray-500">
+          No resources found matching "{searchQuery}"
+        </div>
+      </section>
+    );
+  }
+
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal mb-6">
@@ -65,7 +80,7 @@ const EducationalVideos = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {educationalVideos.map((video, index) => (
+          {filteredVideos.map((video, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
               <CardContent className="p-6">
                 <div className="aspect-video mb-4 bg-gray-100 rounded-lg overflow-hidden">

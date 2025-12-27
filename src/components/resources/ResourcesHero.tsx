@@ -3,9 +3,9 @@ import React from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 
-const ResourcesHero = () => {
+const ResourcesHero = ({ searchQuery, setSearchQuery }: { searchQuery: string; setSearchQuery: (query: string) => void }) => {
   return (
-    <section className="pt-32 pb-16 bg-white">
+    <section className="pt-32 pb-12 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="font-playfair text-4xl md:text-5xl text-medical-charcoal mb-6">
           Patient & Family Resources
@@ -20,6 +20,8 @@ const ResourcesHero = () => {
           <Input
             placeholder="Search resources..."
             className="pl-10 py-3 text-lg"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
       </div>

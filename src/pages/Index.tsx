@@ -51,10 +51,10 @@ const Index = () => {
       </Reveal>
 
       {/* Core Services Section */}
-      <section className="py-20 bg-gradient-to-br from-white to-medical-beige/20">
+      <section className="py-12 bg-gradient-to-br from-white to-medical-beige/20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal width="100%">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="font-playfair text-4xl md:text-5xl text-medical-charcoal mb-6">
                 Specialized Care Services
               </h2>
@@ -98,10 +98,10 @@ const Index = () => {
       </section>
 
       {/* Google Maps Section */}
-      <section className="py-20 bg-gradient-to-br from-medical-beige/30 to-white">
+      <section className="py-12 bg-gradient-to-br from-medical-beige/30 to-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal width="100%">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <div className="inline-flex items-center px-6 py-2 bg-medical-teal/10 rounded-full mb-6">
                 <MapPin className="w-4 h-4 text-medical-teal mr-2" />
                 <span className="text-medical-teal font-inter text-sm font-medium">Visit Our Clinic</span>
