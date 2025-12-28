@@ -37,7 +37,7 @@ const PhilosophySection = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-12">
           <h2 className="font-playfair text-3xl md:text-4xl text-medical-charcoal mb-4">
-            Our Philosophy of Care
+            Philosophy of Care
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-medical-teal to-medical-orange mx-auto mb-6 rounded-full shadow-md"></div>
           <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-medical-teal/20 max-w-4xl mx-auto hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">

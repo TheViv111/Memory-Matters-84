@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { toast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
+
 import FadeInButton from '@/components/animations/FadeInButton';
 import ContactFormHeader from './ContactFormHeader';
 import ContactFormFields from './ContactFormFields';
+
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,34 +39,52 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke('submit-contact', {
-        body: formData
-      });
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+        contact_preference: formData.contactPreference
+      };
 
-      if (error) {
-        throw error;
+      // REPLACE THESE WITH YOUR ACTUAL KEYS FROM EMAILJS DASHBOARD
+      const SERVICE_ID = 'service_68k09ml';
+      const TEMPLATE_ID = 'template_al9mp5g';
+      const PUBLIC_KEY = 'O51s_TR_hVMroY8It';
+
+      const response = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        PUBLIC_KEY
+      );
+
+      if (response.status === 200) {
+        toast({
+          title: "Message Sent Successfully! ✨",
+          description: "Thank you for contacting us. We'll respond at the earliest.",
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+          contactPreference: ''
+        });
       }
 
-      toast({
-        title: "Message Sent Successfully! ✨",
-        description: "Thank you for contacting us. We'll respond at the earliest.",
-      });
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
-        contactPreference: ''
-      });
-
-    } catch (error) {
       console.error('Error submitting contact form:', error);
+      const errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
+      // EmailJS errors often come as objects with a 'text' property
+      const emailJSError = (error as any)?.text || errorMessage;
+
       toast({
         title: "Submission Error",
-        description: "There was an error sending your message. Please try again or call us directly.",
+        description: `Error: ${emailJSError}. Please check your keys and try again.`,
         variant: "destructive"
       });
     } finally {

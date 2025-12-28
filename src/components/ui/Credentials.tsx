@@ -162,6 +162,13 @@ export const CredentialsList = () => {
                             <h3 className="font-playfair text-2xl text-medical-charcoal">Education</h3>
                         </div>
                         <ul className="space-y-4 ml-4 md:ml-16">
+                            <li className="flex gap-4 items-start">
+                                <span className="w-2 h-2 rounded-full bg-medical-teal mt-2 flex-shrink-0" />
+                                <div>
+                                    <p className="font-inter text-gray-700">MBBS - Grant Medical College & Sir JJ Hospital, Mumbai</p>
+                                    <span className="text-xs text-gray-500 font-medium">1998</span>
+                                </div>
+                            </li>
                             {certifications.filter(c => c.title !== "Clinical Experience").map((cert, i) => (
                                 <li key={i} className="flex gap-4 items-start">
                                     <span className="w-2 h-2 rounded-full bg-medical-teal mt-2 flex-shrink-0" />
@@ -173,10 +180,6 @@ export const CredentialsList = () => {
                                     </div>
                                 </li>
                             ))}
-                            <li className="flex gap-4 items-start">
-                                <span className="w-2 h-2 rounded-full bg-medical-teal mt-2 flex-shrink-0" />
-                                <p className="font-inter text-gray-700">MBBS - Grant Medical College & Sir JJ Hospital, Mumbai</p>
-                            </li>
                         </ul>
                     </div>
 
