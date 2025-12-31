@@ -27,6 +27,9 @@ const PatientTestimonials = () => {
 
   const testimonials = [
     {
+      content: "Thanks much Soumya! Dad had the nicest things to say about you always and thought very highly of you. Referred to you as top level professional with a high degree of empathy. And our gratitude to you for helping us to understand him better 🙏🏽"
+    },
+    {
       content: "Good morning Dr. Soumya,\n\nWanted to share with you the news that I have found a job. You deserve all the credit in making me confident and introducing me to various options available.\n\nCan't thank you enough 🙏🏻\nGood day."
     },
     {
