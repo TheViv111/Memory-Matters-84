@@ -27,6 +27,10 @@ const PatientTestimonials = () => {
 
   const testimonials = [
     {
+      content: "I will be eternally grateful to you for your guidance and wonderful care of her. Thank you very much. You are a wonderful rare human being and are richly blessed working in a field where very few are willing to take care of elders. Thank you 🙏.",
+      author: "Sandeep"
+    },
+    {
       content: "Thanks much Soumya! Dad had the nicest things to say about you always and thought very highly of you. Referred to you as top level professional with a high degree of empathy. And our gratitude to you for helping us to understand him better 🙏🏽"
     },
     {
@@ -76,9 +80,14 @@ const PatientTestimonials = () => {
                 <Card className="h-full border-l-4 border-medical-teal shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
                   <CardContent className="p-8 h-full flex flex-col items-center text-center justify-center">
                     <Quote className="w-10 h-10 text-medical-teal/20 mb-6" />
-                    <p className="font-inter text-gray-700 text-lg italic leading-relaxed whitespace-pre-line">
+                    <p className="font-inter text-gray-700 text-lg italic leading-relaxed whitespace-pre-line mb-6">
                       "{testimonial.content}"
                     </p>
+                    {testimonial.author && (
+                      <p className="font-inter font-semibold text-medical-teal text-base">
+                        — {testimonial.author}
+                      </p>
+                    )}
                   </CardContent>
                 </Card>
               </CarouselItem>
