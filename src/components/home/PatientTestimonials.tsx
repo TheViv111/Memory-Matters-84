@@ -47,6 +47,10 @@ const PatientTestimonials = () => {
     },
     {
       content: "Doctor Soumya is a gem of a person. So incredibly patient and understanding. Would highly recommend!"
+    },
+    {
+      content: "Doctor, you have been a great support to us time and again. Dad passed very peacefully in his sleep. A good person like him had a very pain free and peaceful end. He was extremely healthy and fit from the past 2 years and had no health issues. Thank you for your support and good wishes. I will be grateful to you always.",
+      author: "Shobha"
     }
   ];
 
